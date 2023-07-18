@@ -39,7 +39,6 @@
                     <input type="date" class="form-control" id="accident_dt">
                 </div>
             </div>
-            <!-- Add more form elements here for all 34 columns -->
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="coal_metal_ind">Coal or Metal Indication</label>
@@ -70,9 +69,22 @@
                     <input type="time" class="form-control" id="accident_time">
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="degree_injury_cd">Degree of Injury Code</label>
-                    <input type="text" class="form-control" id="degree_injury_cd" placeholder="Enter Degree of Injury Code">
-                </div>
+                    <label for="degree_injury_cd">Degree of Injury/Illness</label>
+                    <select class="form-control" id="degree_injury_cd">
+                        <option value="00">Accident only</option>
+                        <option value="01">Fatality</option>
+                        <option value="02">Permanent total or permanent partial disability</option>
+                        <option value="03">Days away from work only</option>
+                        <option value="04">Days away from work and restricted activity</option>
+                        <option value="05">Days restricted activity only</option>
+                        <option value="06">No days away from work, no restrictions</option>
+                        <option value="07">Occupational illness not degree 1-6</option>
+                        <option value="08">Injuries due to natural causes</option>
+                        <option value="09">Injuries involving non-employees</option>
+                        <option value="10">All other cases (incl. 1st aid)</option>
+                        <option value="?">No value found</option>
+                    </select>
+                  </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
