@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="container mt-5">
         <h2 class="text-center mb-4">Mine Safety Incident Classification</h2>
-        <form>
+        <form method="post" action="/predict">
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="document_no">Document Number</label>
@@ -246,6 +247,9 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <div class="mt-4">
+            <p>{{ prediction_text }}</p>
+        </div>
     </div>
 </body>
 </html>
