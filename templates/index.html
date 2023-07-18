@@ -5,142 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mine Safety Incident Classification</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Mine Safety Incident Classification</h2>
         <form>
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-12">
                     <label for="document_no">Document Number</label>
                     <input type="text" class="form-control" id="document_no" placeholder="Enter Document Number">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="subunit_cd">Subunit Code</label>
                     <input type="text" class="form-control" id="subunit_cd" placeholder="Enter Subunit Code">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="accident_dt">Date of Accident</label>
                     <input type="date" class="form-control" id="accident_dt">
                 </div>
-                <div class="form-group col-md-1">
+            </div>
+            <!-- Add more form elements here for all 34 columns -->
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="coal_metal_ind">Coal or Metal Indication</label>
+                    <input type="text" class="form-control" id="coal_metal_ind" placeholder="Enter Coal or Metal Indication">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="cal_yr">Calendar Year</label>
                     <input type="number" class="form-control" id="cal_yr" placeholder="Enter Calendar Year">
                 </div>
-                <div class="form-group col-md-1">
+                <div class="form-group col-md-12">
                     <label for="cal_qtr">Calendar Quarter</label>
                     <input type="number" class="form-control" id="cal_qtr" placeholder="Enter Calendar Quarter">
                 </div>
-                <div class="form-group col-md-1">
+                <div class="form-group col-md-12">
                     <label for="fiscal_yr">Fiscal Year</label>
                     <input type="number" class="form-control" id="fiscal_yr" placeholder="Enter Fiscal Year">
                 </div>
-                <div class="form-group col-md-1">
+                <div class="form-group col-md-12">
                     <label for="fiscal_qtr">Fiscal Quarter</label>
                     <input type="number" class="form-control" id="fiscal_qtr" placeholder="Enter Fiscal Quarter">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="accident_time">Time of Accident</label>
                     <input type="time" class="form-control" id="accident_time">
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-12">
                     <label for="degree_injury_cd">Degree of Injury Code</label>
                     <input type="text" class="form-control" id="degree_injury_cd" placeholder="Enter Degree of Injury Code">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="fips_state_cd">FIPS State Code</label>
                     <input type="text" class="form-control" id="fips_state_cd" placeholder="Enter FIPS State Code">
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-12">
                     <label for="ug_location_cd">Underground Location Code</label>
                     <input type="text" class="form-control" id="ug_location_cd" placeholder="Enter Underground Location Code">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="ug_mining_method_cd">Underground Mining Method Code</label>
                     <input type="text" class="form-control" id="ug_mining_method_cd" placeholder="Enter Underground Mining Method Code">
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-12">
                     <label for="mining_equip_cd">Mining Equipment Code</label>
                     <input type="text" class="form-control" id="mining_equip_cd" placeholder="Enter Mining Equipment Code">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="equip_mfr_cd">Equipment Manufacturer Code</label>
                     <input type="text" class="form-control" id="equip_mfr_cd" placeholder="Enter Equipment Manufacturer Code">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-12">
                     <label for="equip_mfr_name">Equipment Manufacturer Name</label>
                     <input type="text" class="form-control" id="equip_mfr_name" placeholder="Enter Equipment Manufacturer Name">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="shift_begin_time">Shift Begin Time</label>
                     <input type="time" class="form-control" id="shift_begin_time">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-12">
                     <label for="accident_type">Accident Type</label>
                     <input type="text" class="form-control" id="accident_type" placeholder="Enter Accident Type">
                 </div>
-                <div class="form-group col-md-1">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="no_injuries">Number of Injuries</label>
                     <input type="number" class="form-control" id="no_injuries" placeholder="Enter Number of Injuries">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="tot_exper">Total Experience</label>
                     <input type="number" step="0.01" class="form-control" id="tot_exper" placeholder="Enter Total Experience">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="mine_exper">Mine Experience</label>
                     <input type="number" step="0.01" class="form-control" id="mine_exper" placeholder="Enter Mine Experience">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="job_exper">Job Experience</label>
                     <input type="number" step="0.01" class="form-control" id="job_exper" placeholder="Enter Job Experience">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="occupation_cd">Occupation Code</label>
                     <input type="text" class="form-control" id="occupation_cd" placeholder="Enter Occupation Code">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="activity_cd">Activity Code</label>
                     <input type="text" class="form-control" id="activity_cd" placeholder="Enter Activity Code">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="injury_source_cd">Injury Source Code</label>
                     <input type="text" class="form-control" id="injury_source_cd" placeholder="Enter Injury Source Code">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="nature_injury_cd">Nature of Injury Code</label>
                     <input type="text" class="form-control" id="nature_injury_cd" placeholder="Enter Nature of Injury Code">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="inj_body_part_cd">Injured Body Part Code</label>
                     <input type="text" class="form-control" id="inj_body_part_cd" placeholder="Enter Injured Body Part Code">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="schedule_charge">Schedule Charge</label>
                     <input type="number" class="form-control" id="schedule_charge" placeholder="Enter Schedule Charge">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="days_restrict">Days Restricted</label>
                     <input type="number" class="form-control" id="days_restrict" placeholder="Enter Days Restricted">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="days_lost">Days Lost</label>
                     <input type="number" class="form-control" id="days_lost" placeholder="Enter Days Lost">
                 </div>
-                <div class="form-group col-md-1">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="trans_term">Transfer Term</label>
                     <input type="text" class="form-control" id="trans_term" placeholder="Enter Transfer Term">
                 </div>
-                <div class="form-group col-md-3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="return_to_work_dt">Return-to-work Date</label>
                     <input type="date" class="form-control" id="return_to_work_dt">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="immed_notify_cd">Immediate Notification Code</label>
                     <input type="text" class="form-control" id="immed_notify_cd" placeholder="Enter Immediate Notification Code">
                 </div>
-                <div class="form-group col-md-2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="coal_metal_ind">Coal or Metal Indication</label>
                     <input type="text" class="form-control" id="coal_metal_ind" placeholder="Enter Coal or Metal Indication">
                 </div>
