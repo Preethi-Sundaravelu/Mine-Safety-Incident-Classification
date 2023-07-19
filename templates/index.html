@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div class="container mt-5">
         <h2 class="text-center mb-4">Mine Safety Incident Classification</h2>
-        <form method="post" action="/predict">
+        <form>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="document_no">Document Number</label>
@@ -33,6 +32,7 @@
                         <option value="30">Mill Operation/Preparation Plant</option>
                         <option value="99">Office Workers at Mine Site</option>
                     </select>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -40,6 +40,7 @@
                     <input type="date" class="form-control" id="accident_dt">
                 </div>
             </div>
+            <!-- Add more form elements here for all 34 columns -->
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="coal_metal_ind">Coal or Metal Indication</label>
@@ -70,7 +71,7 @@
                     <input type="time" class="form-control" id="accident_time">
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="degree_injury_cd">Degree of Injury/Illness</label>
+                    <label for="degree_injury_cd">Degree of Injury Code</label>
                     <select class="form-control" id="degree_injury_cd">
                         <option value="00">Accident only</option>
                         <option value="01">Fatality</option>
@@ -85,6 +86,7 @@
                         <option value="10">All other cases (incl. 1st aid)</option>
                         <option value="?">No value found</option>
                     </select>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -112,6 +114,10 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="ug_mining_method_cd">Underground Mining Method Code</label>
+                    <input type="text" class="form-control" id="ug_mining_method_cd" placeholder="Enter Underground Mining Method Code">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="mining_equip_cd">Mining Equipment Code</label>
                     <select class="form-control" id="ug_mining_method_cd">
                         <option value="01">Longwall</option>
                         <option value="02">Shortwall</option>
@@ -122,10 +128,6 @@
                         <option value="08">Other</option>
                         <option value="?">No Value Found</option>
                     </select>
-                </div>
-                <div class="form-group col-md-12">
-                    <label for="mining_equip_cd">Mining Equipment Code</label>
-                    <input type="text" class="form-control" id="mining_equip_cd" placeholder="Enter Mining Equipment Code">
                 </div>
             </div>
             <div class="form-row">
@@ -246,9 +248,6 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div class="mt-4">
-            <p>{{ prediction_text }}</p>
-        </div>
     </div>
 </body>
 </html>
