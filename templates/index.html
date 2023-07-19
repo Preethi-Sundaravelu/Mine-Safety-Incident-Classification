@@ -4,8 +4,252 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mine Safety Incident Classification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        
+    
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Mine Safety Incident Classification</h2>
+        <form method="post" action="/predict">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="document_no">Document Number</label>
+                    <input type="text" class="form-control" id="document_no" placeholder="Enter Document Number">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="subunit_cd">Subunit Code</label>
+                    <select class="form-control" id="subunit_cd">
+                        <option value="01">Underground</option>
+                        <option value="02">Surface at Underground</option>
+                        <option value="03">Strip, Quarry, Open Pit</option>
+                        <option value="04">Auger</option>
+                        <option value="05">Culm Bank/Refuse Pile</option>
+                        <option value="06">Dredge</option>
+                        <option value="12">Other Mining</option>
+                        <option value="17">Independent Shops or Yards</option>
+                        <option value="30">Mill Operation/Preparation Plant</option>
+                        <option value="99">Office Workers at Mine Site</option>
+                    </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="accident_dt">Date of Accident</label>
+                    <input type="date" class="form-control" id="accident_dt">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="coal_metal_ind">Coal or Metal Indication</label>
+                    <input type="text" class="form-control" id="coal_metal_ind" placeholder="Enter Coal or Metal Indication">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="cal_yr">Calendar Year</label>
+                    <input type="number" class="form-control" id="cal_yr" placeholder="Enter Calendar Year">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="cal_qtr">Calendar Quarter</label>
+                    <input type="number" class="form-control" id="cal_qtr" placeholder="Enter Calendar Quarter">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="fiscal_yr">Fiscal Year</label>
+                    <input type="number" class="form-control" id="fiscal_yr" placeholder="Enter Fiscal Year">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="fiscal_qtr">Fiscal Quarter</label>
+                    <input type="number" class="form-control" id="fiscal_qtr" placeholder="Enter Fiscal Quarter">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="accident_time">Time of Accident</label>
+                    <input type="time" class="form-control" id="accident_time">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="degree_injury_cd">Degree of Injury/Illness</label>
+                    <select class="form-control" id="degree_injury_cd">
+                        <option value="00">Accident only</option>
+                        <option value="01">Fatality</option>
+                        <option value="02">Permanent total or permanent partial disability</option>
+                        <option value="03">Days away from work only</option>
+                        <option value="04">Days away from work and restricted activity</option>
+                        <option value="05">Days restricted activity only</option>
+                        <option value="06">No days away from work, no restrictions</option>
+                        <option value="07">Occupational illness not degree 1-6</option>
+                        <option value="08">Injuries due to natural causes</option>
+                        <option value="09">Injuries involving non-employees</option>
+                        <option value="10">All other cases (incl. 1st aid)</option>
+                        <option value="?">No value found</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="fips_state_cd">FIPS State Code</label>
+                    <input type="text" class="form-control" id="fips_state_cd" placeholder="Enter FIPS State Code">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="ug_location_cd">Underground Location Code</label>
+                    <select class="form-control" id="ug_location_cd">
+                        <option value="01">Vertical shaft</option>
+                        <option value="02">Slope/inclined shaft</option>
+                        <option value="03">Face</option>
+                        <option value="04">Intersection</option>
+                        <option value="05">Underground shop/office</option>
+                        <option value="06">Last open crosscut</option>
+                        <option value="07">Inby permanent support</option>
+                        <option value="08">Haulageway</option>
+                        <option value="09">Other entry (not haulageway)</option>
+                        <option value="98">Other</option>
+                        <option value="99">Not Marked</option>
+                        <option value="?">No Value Found</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="ug_mining_method_cd">Underground Mining Method Code</label>
+                    <select class="form-control" id="ug_mining_method_cd">
+                        <option value="01">Longwall</option>
+                        <option value="02">Shortwall</option>
+                        <option value="03">Conventional Stoping</option>
+                        <option value="05">Continuous Miner</option>
+                        <option value="06">Hand</option>
+                        <option value="07">Caving</option>
+                        <option value="08">Other</option>
+                        <option value="?">No Value Found</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="mining_equip_cd">Mining Equipment Code</label>
+                    <input type="text" class="form-control" id="mining_equip_cd" placeholder="Enter Mining Equipment Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="equip_mfr_cd">Equipment Manufacturer Code</label>
+                    <input type="text" class="form-control" id="equip_mfr_cd" placeholder="Enter Equipment Manufacturer Code">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="equip_mfr_name">Equipment Manufacturer Name</label>
+                    <input type="text" class="form-control" id="equip_mfr_name" placeholder="Enter Equipment Manufacturer Name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="shift_begin_time">Shift Begin Time</label>
+                    <input type="time" class="form-control" id="shift_begin_time">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="accident_type">Accident Type</label>
+                    <input type="text" class="form-control" id="accident_type" placeholder="Enter Accident Type">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="no_injuries">Number of Injuries</label>
+                    <input type="number" class="form-control" id="no_injuries" placeholder="Enter Number of Injuries">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="tot_exper">Total Experience</label>
+                    <input type="number" step="0.01" class="form-control" id="tot_exper" placeholder="Enter Total Experience">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="mine_exper">Mine Experience</label>
+                    <input type="number" step="0.01" class="form-control" id="mine_exper" placeholder="Enter Mine Experience">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="job_exper">Job Experience</label>
+                    <input type="number" step="0.01" class="form-control" id="job_exper" placeholder="Enter Job Experience">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="occupation_cd">Occupation Code</label>
+                    <input type="text" class="form-control" id="occupation_cd" placeholder="Enter Occupation Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="activity_cd">Activity Code</label>
+                    <input type="text" class="form-control" id="activity_cd" placeholder="Enter Activity Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="injury_source_cd">Injury Source Code</label>
+                    <input type="text" class="form-control" id="injury_source_cd" placeholder="Enter Injury Source Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="nature_injury_cd">Nature of Injury Code</label>
+                    <input type="text" class="form-control" id="nature_injury_cd" placeholder="Enter Nature of Injury Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inj_body_part_cd">Injured Body Part Code</label>
+                    <input type="text" class="form-control" id="inj_body_part_cd" placeholder="Enter Injured Body Part Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="schedule_charge">Schedule Charge</label>
+                    <input type="number" class="form-control" id="schedule_charge" placeholder="Enter Schedule Charge">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="days_restrict">Days Restricted</label>
+                    <input type="number" class="form-control" id="days_restrict" placeholder="Enter Days Restricted">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="days_lost">Days Lost</label>
+                    <input type="number" class="form-control" id="days_lost" placeholder="Enter Days Lost">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="trans_term">Transfer Term</label>
+                    <input type="text" class="form-control" id="trans_term" placeholder="Enter Transfer Term">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="return_to_work_dt">Return-to-work Date</label>
+                    <input type="date" class="form-control" id="return_to_work_dt">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="immed_notify_cd">Immediate Notification Code</label>
+                    <input type="text" class="form-control" id="immed_notify_cd" placeholder="Enter Immediate Notification Code">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="coal_metal_ind">Coal or Metal Indication</label>
+                    <input type="text" class="form-control" id="coal_metal_ind" placeholder="Enter Coal or Metal Indication">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="mt-4">
+            <p>{{ prediction_text }}</p>
+        </div>
+    </div>
 </body>
 </html>
