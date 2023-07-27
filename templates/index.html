@@ -16,58 +16,80 @@
                     <label for="document_no">Document Number</label>
                     <input type="text" class="form-control" id="document_no" placeholder="Enter Document Number">
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="subunit_cd">Subunit Code</label>
+                    <label for="subunit_cd">SubUnit where the accident/injury/illness occurred</label>
                     <select class="form-control" id="subunit_cd">
-                        <option value="30">MILL OPERATION/PREPARATION PLANT</option>
-                        <option value="1">UNDERGROUND</option>
-                        <option value="3">STRIP, QUARRY, OPEN PIT</option>
-                        <option value="2">SURFACE AT UNDERGROUND</option>
-                        <option value="99">OFFICE WORKERS AT MINE SITE</option>
-                        <option value="5">CULM BANK/REFUSE PILE</option>
-                        <option value="4">AUGER</option>
-                        <option value="17">INDEPENDENT SHOPS OR YARDS</option>
-                        <option value="6">DREDGE</option>
+                        <option value="" selected disabled>Select SubUnit</option>
+                        <option value="01">Underground</option>
+                        <option value="02">Surface at Underground</option>
+                        <option value="03">Strip, Quarry, Open Pit</option>
+                        <option value="04">Auger</option>
+                        <option value="05">Culm Bank/Refuse Pile</option>
+                        <option value="06">Dredge</option>
+                        <option value="17">Independent Shops or Yards</option>
+                        <option value="30">Mill Operation/Preparation Plant</option>
+                        <option value="99">Office Workers at Mine Site</option>
                     </select>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="accident_dt">Date of Accident</label>
                     <input type="date" class="form-control" id="accident_dt">
                 </div>
             </div>
-            <!-- Add more form elements here for all 34 columns -->
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="coal_metal_ind">Coal or Metal Indication</label>
-                    <input type="text" class="form-control" id="coal_metal_ind" placeholder="Enter Coal or Metal Indication">
-                </div>
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="cal_yr">Calendar Year</label>
-                    <input type="number" class="form-control" id="cal_yr" placeholder="Enter Calendar Year">
-                </div>   
-            </div>
-                <div class="form-row">
+                    <select class="form-control" id="cal_yr">
+                        <option value="" selected disabled>Select Calendar Year</option>
+                        <script>
+                            var startYear = 2000;
+                            var endYear = 2023;
+                            var selectElement = document.getElementById("cal_yr");
+                            for (var year = startYear; year <= endYear; year++) {
+                                var option = document.createElement("option");
+                                option.value = year;
+                                option.text = year;
+                                selectElement.appendChild(option);
+                            }
+                        </script>
+                    </select>
+                </div>  
                 <div class="form-group col-md-12">
                     <label for="cal_qtr">Calendar Quarter</label>
-                    <input type="number" class="form-control" id="cal_qtr" placeholder="Enter Calendar Quarter">
+                    <select class="form-control" id="cal_qtr">
+                        <option value="" selected disabled>Select Calendar Quarter</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="fiscal_yr">Fiscal Year</label>
-                    <input type="number" class="form-control" id="fiscal_yr" placeholder="Enter Fiscal Year">
+                    <select class="form-control" id="fiscal_yr">
+                        <option value="" selected disabled>Select Fiscal Year</option>
+                        <script>
+                            var startYear = 2000;
+                            var endYear = 2023;
+                            var selectElement = document.getElementById("fiscal_yr");
+                            for (var year = startYear; year <= endYear; year++) {
+                                var option = document.createElement("option");
+                                option.value = year;
+                                option.text = year;
+                                selectElement.appendChild(option);
+                            }
+                        </script>
+                    </select>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="fiscal_qtr">Fiscal Quarter</label>
-                    <input type="number" class="form-control" id="fiscal_qtr" placeholder="Enter Fiscal Quarter">
+                    <select class="form-control" id="cal_qtr">
+                        <option value="" selected disabled>Select Fiscal Quarter</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
@@ -75,45 +97,67 @@
                     <label for="accident_time">Time of Accident</label>
                     <input type="time" class="form-control" id="accident_time">
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="degree_injury_cd">Degree of Injury Code</label>
+                    <label for="degree_injury_cd">Degree of Injury/Illness</label>
                     <select class="form-control" id="degree_injury_cd">
-                        <option value="6">No Dys Awy Frm Wrk, No Rstr Act</option>
-                        <option value="3">Days Away From Work Only</option>
-                        <option value="5">Days Restricted Activity Only</option>
-                        <option value="4">Dys Awy Frm Wrk & Restrctd Act</option>
-                        <option value="2">Perm Tot or Perm Prtl Disablty</option>
-                        <option value="10">All Other Cases (Incl 1st Aid)</option>
-                        <option value="9">Injuries Involving Nonemployees</option>
-                        <option value="?">No Value Found</option>
-                        <option value="8">Injuries Due to Natural Causes</option>
-                        <option value="1">Fatality</option>
-                        <option value="0">Accident Only</option>
-                        <option value="7">Occupational Illness Not Deg 1-6</option>
+                        <option value="" selected disabled>Select Degree of Injury/Illness</option>
+                        <option value="00">Accident only</option>
+                        <option value="01">Fatality</option>
+                        <option value="02">Permanent total or permanent partial disability</option>
+                        <option value="03">Days away from work only</option>
+                        <option value="04">Days away from work and restricted activity</option>
+                        <option value="05">Days restricted activity only</option>
+                        <option value="06">No days away from work, no restrictions</option>
+                        <option value="07">Occupational illness not degree 1-6</option>
+                        <option value="08">Injuries due to natural causes</option>
+                        <option value="09">Injuries involving non-employees</option>
+                        <option value="10">All other cases (incl. 1st aid)</option>
+                        <option value="?">No value found</option>
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="fips_state_cd">FIPS State Code</label>
-                    <input type="text" class="form-control" id="fips_state_cd" placeholder="Enter FIPS State Code">
+                    <select class="form-control" id="fips_state_cd">
+                        <option value="" selected disabled>Select FIPS State Code</option>
+                        <option value="1">1</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="21">21</option>
+                        <option value="24">24</option>
+                        <option value="35">35</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="42">42</option>
+                        <option value="51">51</option>
+                        <option value="54">54</option>
+                        <option value="56">56</option>
+                        <option value="30">30</option>
+                        <option value="47">47</option>
+                        <option value="2">2</option>
+                        <option value="38">38</option>
+                        <option value="49">49</option>
+                        <option value="48">48</option>
+                        <option value="29">29</option>
+                        <option value="53">53</option>
+                        <option value="5">5</option>
+                        <option value="20">20</option>
+                        <option value="36">36</option>
+                    </select>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="ug_location_cd">Underground Location Code</label>
+                    <label for="ug_location_cd">Underground Location</label>
                     <select class="form-control" id="ug_location_cd">
+                        <option value="" selected disabled>Select Underground Location</option>
                         <option value="01">Vertical shaft</option>
                         <option value="02">Slope/inclined shaft</option>
                         <option value="03">Face</option>
                         <option value="04">Intersection</option>
                         <option value="05">Underground shop/office</option>
                         <option value="06">Last open crosscut</option>
-                        <option value="07">Inby permanent support</option>
-                        <option value="08">Haulageway</option>
-                        <option value="09">Other entry (not haulageway)</option>
                         <option value="98">Other</option>
                         <option value="99">Not Marked</option>
                         <option value="?">No Value Found</option>
@@ -122,616 +166,993 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="ug_mining_method_cd">Underground Mining Method Code</label>
+                    <label for="ug_mining_method_cd">Underground Mining Method</label>
                     <select class="form-control" id="ug_mining_method_cd">
-                    <option value="5">Continuous Mining</option>
-                    <option value="1">Longwall</option>
-                    <option value="8">Other</option>
-                    <option value="?">NO VALUE FOUND</option>
-                    <option value="3">Conventional Stoping</option>
-                    <option value="6">Hand</option>
-                    <option value="2">Shortwall</option>
-                    <option value="7">Caving</option>
-                </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="mining_equip_cd">Mining Equipment Code</label>
-                    <select class="form-control" id="ug_mining_method_cd">
+                        <option value="" selected disabled>Select Underground Mining Method</option>
                         <option value="01">Longwall</option>
                         <option value="02">Shortwall</option>
                         <option value="03">Conventional Stoping</option>
-                        <option value="05">Continuous Miner</option>
+                        <option value="05">Continuous Mining</option>
                         <option value="06">Hand</option>
                         <option value="07">Caving</option>
                         <option value="08">Other</option>
                         <option value="?">No Value Found</option>
                     </select>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="equip_mfr_cd">Equipment Manufacturer Code</label>
-                    <input type="text" class="form-control" id="equip_mfr_cd" placeholder="Enter Equipment Manufacturer Code">
+                    <label for="mining_equip_cd">Mining Equipment Involved in the Accident</label>
+                    <select class="form-control" id="mining_equip_cd">
+                        <option value="" selected disabled>Select Mining Equipment</option>
+                        <option value="?">NO VALUE FOUND</option>
+                        <option value="16">Cutting machine, Chain cutter</option>
+                        <option value="61">Shuttle car, Buggy, Ram car, Young buggy, Teletram car</option>
+                        <option value="66">Tractor, Supply car</option>
+                        <option value="36">Longwall subparts, Duke, Dowdy jack, Ramjack, Longwall shield</option>
+                        <option value="28">Hand tools (not powered)</option>
+                        <option value="19">Elevator, Skip, Cage, Buckets, Mancage, Slope car</option>
+                        <option value="54">Rock or roof bolting machine, Pinning machine, Truss bolter</option>
+                        <option value="13">Conveyor, Belt feeder, Stage loader, Hopper shaker, Belt structure</option>
+                        <option value="37">Mancar, Mantrip, Personnel carrier, Porta bus, Jeep, Jitney, ATV</option>
+                        <option value="44">Ore haulage trucks - off highway trucks</option>
+                        <option value="55">Rock dusting machine, Trickle duster</option>
+                        <option value="8">Bulldozer, Dozer, Crawler tractor, Push cat</option>
+                        <option value="24">Front-end loader, Tractor-shovel, Payloader, Highlift, Skip loader</option>
+                        <option value="48">Pump, Slurry pump, Sump pump</option>
+                        <option value="12">Continuous miner, Tunnel borer, Road header</option>
+                        <option value="9">Carriage-mounted drills, Rail, Rubber-tired, Jumbo, Air-track drill</option>
+                        <option value="53">Rock drill, Jackleg, Airleg, Drifter, Stoper, Buzzy, Jackhammer</option>
+                        <option value="60">Shovel, Power shovel, Backhoe, Trackhoe, Dragline - Big Muskie</option>
+                        <option value="4">Auger machine, Highwall miner, Auger highwall drill, Auger drill</option>
+                        <option value="14">Crane, Cherry picker, Lift basket, Scissor truck, Boom truck</option>
+                        <option value="67">Trucks, Service truck, Utility truck, Pickup, Water truck, Fuel truck</option>
+                        <option value="58">Screen, Vibrator, Shaker, Rock screener, Scalper</option>
+                        <option value="41">Mine car, Timber truck, Nipper truck</option>
+                        <option value="23">Forklift, Plant cat, Telehandler, Hyster, Lift truck, Skid steer</option>
+                        <option value="57">Scraper loader, Tractor scraper, Pan scraper, Elevating scraper</option>
+                        <option value="52">Road grader, Motor grader, Motor patrol, Grader, Road scraper</option>
+                        <option value="29">Hand tools (powered)</option>
+                        <option value="33">Load-haul-dump, Scoop tram, Transloader, Unitrac, S&S Battery</option>
+                        <option value="51">Raw coal storage, Tipple, Dump bins</option>
+                        <option value="47">Pneumatic blasting agent loader, Driller loader, Prill loader</option>
+                        <option value="15">Crusher, Breaker, Mills (ball and rod), Feeder breaker</option>
+                        <option value="30">Hoist, Car dropper, Hydraulic jack, Mine car retriever, Condor</option>
+                        <option value="7">Boats, Barges, Other water transportation</option>
+                        <option value="42">Mine car, Ore or coal car, Boxcar, Hopper car</option>
+                        <option value="34">Locomotive, (motor) - rail-mounted (Battery, Steam, Electric, Air)</option>
+                        <option value="45">Ore haulage trucks - on highway trucks</option>
+                        <option value="27">Gunite machine, Shotcrete</option>
+                        <option value="71">Machine, NEC - Wheelbarrow, Well drilling Rig, Post hole auger</option>
+                        <option value="35">Longwall machine</option>
+                        <option value="40">Milling machinery, Block press, Ballast machine</option>
+                        <option value="39">Mill, Grinding (Rod, Ball, Autogenous, Pug, Hammer)</option>
+                        <option value="65">Track equipment, Re-railer, 335 track shifter, Track jack</option>
+                        <option value="20">Electric drills, Coal drills</option>
+                        <option value="25">Gathering arm loader, Conway loader, Coal loading machine</option>
+                        <option value="5">Bench grinder, Drill press, Band/Table saw, Sandblaster</option>
+                        <option value="43">Mucking machine, Overshot loader, Cryderman</option>
+                        <option value="68">Tugger, Air winch, Air hoist, Air jack, Electric winch</option>
+                        <option value="21">Fan</option>
+                        <option value="11">Classifier, Screw classifier, Spiral classifier, Cyclone classifier</option>
+                        <option value="70">Welding machine, Torch, Cutting torch, Arc welder, Air arc</option>
+                        <option value="10">Chute</option>
+                        <option value="2">Air compressor</option>
+                        <option value="69">Washers</option>
+                        <option value="6">Blow pipe, Blow gun, Air lance</option>
+                        <option value="17">Dimension stone machinery, Gangwire saw, Guillotine, Hydrosplit</option>
+                        <option value="38">Man lift, Lift basket, Basket scaler, Self-propelled hydraulic boom</option>
+                        <option value="22">Flotation and filters</option>
+                        <option value="56">Rotary dump, Dump rail</option>
+                        <option value="46">Packaging machine, Bagger, Sewing machine, Palletizer</option>
+                        <option value="18">Dredge</option>
+                        <option value="31">Hydraulic jets, Monitor</option>
+                        <option value="64">Tamping machine</option>
+                        <option value="3">Air transportation, Planes, Helicopter</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="equip_mfr_name">Equipment Manufacturer Name</label>
-                    <input type="text" class="form-control" id="equip_mfr_name" placeholder="Enter Equipment Manufacturer Name">
+                  <label for="equip_mfr_cd">Equipment Manufacturer Code</label>
+                  <select class="form-control" id="equip_mfr_cd" onchange="populateMfrName()">
+                    <option value="">Select Equipment Manufacturer Code</option>
+                    <!-- Iterate through the dictionary keys using JavaScript -->
+                    <script>
+                      var mfr_dict = {
+                        121: ["Not Reported"],
+                        104: ["Telsmith"],
+                        119: ["Not on this list"],
+                        157: ["Getman"],
+                        3000: ["Not listed"],
+                        607: ["Fletcher"],
+                        0: ["Not Reported"],
+                        18: ["Caterpillar"],
+                        63: ["Komatsu"],
+                        147: ["Sandvik"],
+                        53: ["Ingersol-Rand"],
+                        58: ["Joy"],
+                        39: ["Fletcher"],
+                        310: ["Caterpillar"],
+                        68: ["Mack"],
+                        1013: ["Joy Machinery Co. (Joy, Joy Manufacturing Co.)"],
+                        508: ["Eimco"],
+                        527: ["Euclid (Euc)"],
+                        15: ["Bucyrus-Erie"],
+                        51: ["P&H"],
+                        612: ["Ford (Ford Motor Co.)"],
+                        320: ["Chevrolet"],
+                        122: ["A. L. Lee"],
+                        1301: ["Mack"],
+                        120: ["Unknown"],
+                        734: ["Grundlach (coal crusher)"],
+                        1119: ["Komatsu"],
+                        109: ["Allis-Chalmers (AC) (Fiat-Allis)", "Wagner"],
+                        135: ["Hitachi"],
+                        904: ["Ingersoll-Rand Co."],
+                        20: ["Chevrolet"],
+                        2010: ["Terex"],
+                        69: ["Manitowoc"],
+                        98: ["S & S"],
+                        45: ["General Electric"],
+                        1511: ["Owens"],
+                        59: ["Kenworth"],
+                        38: ["Fairchild"],
+                        10: ["Atlas-Copco"],
+                        514: ["Emaco"],
+                        512: ["Elkhorn Industrial Products"],
+                        67: ["Long-Airdox"],
+                        102: ["Stamler"],
+                        37: ["Euclid"],
+                        33: ["Eimco"],
+                        1222: ["Long-Airdox"],
+                        46: ["GMC"],
+                        425: ["Dresser Industries"],
+                        1932: ["Stamler"],
+                        70: ["Marion"],
+                        125: ["Brookville"],
+                        1902: ["Salem (McCarthy)"],
+                        1010: ["John Deere"],
+                        231: ["Bucyrus-Erie (BE)"],
+                        325: ["Austin-Western"],
+                        8: ["Alpine"],
+                        43: ["Galis"],
+                        75: ["Michigan Clark"],
+                        55: ["International"],
+                        715: ["General Motors (GM)"],
+                        35: ["Emaco"],
+                        17: ["Case"],
+                        105: ["Terex"],
+                        207: ["Bantam (Koehring)"],
+                        601: ["Fairchild"],
+                        82: ["Nordberb&Rexnord"],
+                        138: ["John Deere"],
+                        1006: ["Jeffrey-Dresser"],
+                        64: ["Kress"],
+                        56: ["Jeffrey-Dresser"],
+                        1207: ["Lee-Norse Co."],
+                        40: ["FMC"],
+                        1907: ["S & S"],
+                        41: ["Ford"],
+                        89: ["Pioneer"],
+                        727: ["Gorman-Rupp"],
+                        724: ["Goodman"],
+                        126: ["Chrysler", "Atlas Copco"],
+                        148: ["Sanford-Day"],
+                        804: ["Harnischfeger"],
+                        2303: ["Wagner"],
+                        1210: ["LeTourneau-Westinghouse (Wabco)"],
+                        706: ["Gardner-Denver"],
+                        71: ["Marathon"],
+                        110: ["Alpine (Oesterreichisch-Alpine Montangesellschaft)"],
+                        1605: ["Page"],
+                        139: ["Johnson Ind"],
+                        711: ["General Electric Co."],
+                        23: ["Cline"],
+                        47: ["Goodman"],
+                        48: ["Gorman-Rupp"],
+                        106: ["Unit Rig Equip"],
+                        1107: ["Kersey Manufacturing Co."],
+                        81: ["Nolan"],
+                        1912: ["Schroder"],
+                        406: ["Demag Corp."],
+                        66: ["Lee-Norse"],
+                        44: ["Gardner-Denver"],
+                        705: ["Galis"],
+                        123: ["Bobcat"],
+                        87: ["Page"],
+                        1123: ["Kress (Kress Corp.)"],
+                        143: ["Montgomery"],
+                        156: ["Wallace"],
+                        308: ["Case"],
+                        133: ["Freightliner"],
+                        1209: ["LeTourneau (Marathon-LeTourneau (Longview Div.))"],
+                        108: ["Allen-Sherman-Hoff", "Wabco"],
+                        61: ["Kubota"],
+                        208: ["Barber-Greene (Telsmith Div.)"],
+                        151: ["Stanley"],
+                        62: ["Koehring"],
+                        73: ["McLanahan"],
+                        7: ["Allis-Chalmers"],
+                        2800: ["Fabricated at mine"],
+                        1302: ["Manitowoc"],
+                        129: ["Damascus"],
+                        131: ["Drilltech"],
+                        6: ["Allen-Sherman"],
+                        86: ["Owens"],
+                        1404: ["National Mine Service"],
+                        1816: ["Robbins"],
+                        142: ["Milwaukee"],
+                        21: ["Chicago"],
+                        1341: ["Myers-Whaley"],
+                        322: ["Chicago Pneumatic"],
+                        909: ["Cedar Rapids"],
+                        130: ["DeWalt"],
+                        49: ["Gradall"],
+                        96: ["Royal"],
+                        54: ["Insley/Lincoln"],
+                        2321: ["Wilcox"],
+                        1506: ["Oshkosh"],
+                        84: ["Orenstein"],
+                        14: ["Black & Decker"],
+                        9: ["American Hoist"],
+                        117: ["Wirth"],
+                        97: ["Salem"],
+                        219: ["Black & Decker"],
+                        1412: ["Nordberg (Rexnord)"],
+                        100: ["Schroder"],
+                        155: ["Volvo"],
+                        906: ["Insley Mfg."],
+                        232: ["Buffalo-American"],
+                        2315: ["Westfalia"],
+                        42: ["Fuller"],
+                        140: ["Kawasaki"],
+                        2108: ["Unit Rig Equipment Co. (Electrahaul)"],
+                        1106: ["Kenworth"],
+                        146: ["Peterbilt"],
+                        27: ["Demag"],
+                        1414: ["Northwest"],
+                        730: ["Gradall"],
+                        101: ["Abex"],
+                        34: ["Elkhorn"],
+                        113: ["White Star"],
+                        26: ["Dart Truck"],
+                        3: ["Acme"],
+                        152: ["Sterling"],
+                        1320: ["Meschers-Benz"],
+                        19: ["Cedar Rapids"],
+                        74: ["Mescher"],
+                        22: ["Clark"],
+                        1943: ["Symons"],
+                        1501: ["O&K (Orenstein & Koppel)(motor graders and excav)"],
+                        80: ["National Mine"],
+                        32: ["Eickhoff"],
+                        31: ["Eaton"],
+                        149: ["Schindler"],
+                        144: ["Otis"],
+                        112: ["Westinghouse"],
+                      };
+              
+                      // JavaScript code to populate the Equipment Manufacturer Code dropdown
+                      for (var key in mfr_dict) {
+                        document.write('<option value="' + key + '">' + key + '</option>');
+                      }
+                    </script>
+                  </select>
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="equip_mfr_name">Equipment Manufacturer Name</label>
+                  <select class="form-control" id="equip_mfr_name">
+                    <option value="">Select Equipment Manufacturer Name</option>
+                  </select>
                 </div>
             </div>
+            <script>
+            // Function to populate the Equipment Manufacturer Name dropdown based on the selected code
+            function populateMfrName() {
+                var equip_mfr_cd = document.getElementById('equip_mfr_cd').value;
+                var equip_mfr_name_dropdown = document.getElementById('equip_mfr_name');
+                equip_mfr_name_dropdown.innerHTML = '';
+            
+                // If a code is selected, get the corresponding list of names from the dictionary
+                if (equip_mfr_cd !== '') {
+                var equip_mfr_names = mfr_dict[equip_mfr_cd];
+                // Create options for the Equipment Manufacturer Name dropdown
+                for (var i = 0; i < equip_mfr_names.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = equip_mfr_names[i];
+                    option.text = equip_mfr_names[i];
+                    equip_mfr_name_dropdown.appendChild(option);
+                }
+                }
+            }
+            </script>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="shift_begin_time">Shift Begin Time</label>
                     <input type="time" class="form-control" id="shift_begin_time">
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="accident_type">Accident Type</label>
-                    <input type="text" class="form-control" id="accident_type" placeholder="Enter Accident Type">
-                </div>
-            </div>
-            <div class="form-row">
+                    <select class="form-control" id="accident_type">
+                      <option value="">Select Accident Type</option>
+                      <!-- Iterate through the list of Accident Types -->
+                      <script>
+                        var accidentTypes = [
+                            "Absorption of radiations, caustics, toxic and noxious substances",
+                            "Struck by falling object",
+                            "Struck against stationary object",
+                            "Over-exertion in lifting objects",
+                            "Struck by flying object",
+                            "Over-exertion in pulling or pushing objects",
+                            "Caught in, under or between a moving and a stationary object",
+                            "Struck by... NEC",
+                            "Over-exertion NEC",
+                            "Caught in, under or between two or more moving objects",
+                            "Caught in, under or between NEC",
+                            "Fall to the walkway or working surface",
+                            "Rubbed or abraded",
+                            "Struck by rolling or sliding object",
+                            "Over-exertion in wielding or throwing objects",
+                            "Contact with hot objects or substances",
+                            "Bodily reaction, NEC",
+                            "Struck against a moving object",
+                            "Fall onto or against objects",
+                            "No Value Found",
+                            "Caught in, under or between running or meshing objects",
+                            "Struck by powered moving object",
+                            "Inhalation of radiations, caustics, toxic and noxious substances",
+                            "Fall from machine",
+                            "Struck by concussion",
+                            "Fall to lower level, NEC",
+                            "Contact with heat",
+                            "Fall from ladders",
+                            "Fall down raise, shaft or manway",
+                            "Unclassified, insufficient data",
+                            "Flash burns (electric)",
+                            "Fall from scaffolds, walkways, platforms",
+                            "Flash burns (welding)",
+                            "Accident type, without injuries",
+                            "Contact with electrical current",
+                            "Fall down stairs",
+                            "Fall from piled material",
+                            "Fall on save level, NEC",
+                            "Fall from headframe, derrick or tower",
+                            "NEC",
+                            "Drowning",
+                            "Ingestion of radiations, caustics, toxic and noxious substances",
+                        ];
+                        // JavaScript code to populate the Accident Type dropdown
+                        for (var i = 0; i < accidentTypes.length; i++) {
+                          document.write('<option value="' + accidentTypes[i] + '">' + accidentTypes[i] + '</option>');
+                        }
+                      </script>
+                    </select>
+                  </div>
                 <div class="form-group col-md-12">
                     <label for="no_injuries">Number of Injuries</label>
-                    <input type="number" class="form-control" id="no_injuries" placeholder="Enter Number of Injuries">
+                    <input type="number" class="form-control" id="no_injuries" placeholder="Enter Number of Injuries"min=0>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="tot_exper">Total Experience</label>
-                    <input type="number" step="0.01" class="form-control" id="tot_exper" placeholder="Enter Total Experience">
+                    <input type="number" step="0.01" class="form-control" id="tot_exper" placeholder="Enter Total Experience"min="0">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="mine_exper">Mine Experience</label>
-                    <input type="number" step="0.01" class="form-control" id="mine_exper" placeholder="Enter Mine Experience">
+                    <input type="number" step="0.01" class="form-control" id="mine_exper" placeholder="Enter Mine Experience"min="0">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="job_exper">Job Experience</label>
-                    <input type="number" step="0.01" class="form-control" id="job_exper" placeholder="Enter Job Experience">
+                    <input type="number" step="0.01" class="form-control" id="job_exper" placeholder="Enter Job Experience"min="0">
                 </div>
             </div>
-        <div class="form-row">
-        <div class="form-group col-md-12">
-         <label for="occupation_cd">Occupation Code</label>
-         <select class="form-control" id="occupation_cd">
-        <option value="?">NO VALUE FOUND</option>
-        <option value="304">Maintenance man, Mechanic, Repair/Serviceman, Boilermaker, Fueler, Tire tech, Field service tech</option>
-        <option value="46">Roof bolter, Rock bolter, Pinner, Mobile roof support operator (MRS)</option>
-        <option value="418">Belt foreman, Maintenance foreman, Maintenance supervisor</option>
-        <option value="414">Quality control technician, Laboratory technician, Laboratory assistant</option>
-        <option value="116">Laborer, Bull gang, Parts runner, Roustabout, Roof trimmer/scaler</option>
-        <option value="44">Longwall operator, Chock operator, Shear operator, Plow operator</option>
-        <option value="4">Maintenance man, Mechanic, Repair/Serviceman, Boilermaker, Fueler, Tire tech, Field service tech</option>
-        <option value="149">Bull gang foreman, Labor foreman, Leadman, Section foreman, Shift boss</option>
-        <option value="35">Continuous miner helper, Coal mole helper, Bridgeman</option>
-        <option value="104">Maintenance man, Mechanic, Repair/Serviceman, Boilermaker, Fueler, Tire tech, Field service tech</option>
-        <option value="382">Front-end loader, Scraper-loader operator, Pan operator, Payloader, Scraper rig operator</option>
-        <option value="122">Coal dump operator</option>
-        <option value="53">Utility man, Errand boy, Service truck operator</option>
-        <option value="157">Pumper</option>
-        <option value="50">Shuttle car operator, Mantrip operator, Ramcar operator, Rail runner, Buggy operator</option>
-        <option value="462">Examiner, Fire boss, Pre-shift examiner, Mine examiner</option>
-        <option value="302">Electrician, Lineman</option>
-        <option value="101">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
-        <option value="301">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
-        <option value="374">Warehouseman, Bagger, Palletizer/Stacker, Store keeper, Packager, Fabricator, Cleaning plant operator</option>
-        <option value="16">Laborer, Bull gang, Faceman, Parts runner, Roustabout, Roof trimmer/scaler</option>
-        <option value="199">Miner, NEC</option>
-        <option value="49">Section foreman, Bullgang foreman, Labor foreman, Leadman, Shift boss</option>
-        <option value="2">Electrician, Lineman</option>
-        <option value="176">Truck driver</option>
-        <option value="54">Discontinued 1/31/2014. Several other codes cover Scoop Car Operator</option>
-        <option value="168">Bulldozer operator, Universal operator, Heavy equipment operator, Operating engineer</option>
-        <option value="456">Assayer, Geologist, Metallurgist, Engineer, Engineer management</option>
-        <option value="328">Utility man, Shift tech, Service/Dump truck operator</option>
-        <option value="154">Belt cleaner, Picker</option>
-        <option value="36">Continuous miner operator, Coal mole operator</option>
-        <option value="489">Outside foreman, Leadman</option>
-        <option value="316">Laborer, Blacksmith, Bull gang, Parts runner, Roustabout, Pick-up man, Pitman</option>
-        <option value="28">Scoop car/Scooptram operator, Load/Haul/Dump (LHD) operator, Teletram operator</option>
-        <option value="102">Electrician, Lineman</option>
-        <option value="216">Trackman, Track worker, Track gang</option>
-        <option value="319">Welder (shop)</option>
-        <option value="269">Motorman, Motor person, Swamper, Switchman, Locomotive operator</option>
-        <option value="41">LW Propman, Propman helper, Move crew if LW, Move-up man, Jacksetter, Advanceman LW helper</option>
-        <option value="314">Coal sampler</option>
-        <option value="350">Shuttle car operator, Mantrip operator, Ramcar operator, Rail runner, Buggy operator</option>
-        <option value="106">Rock duster</option>
-        <option value="110">Timberman</option>
-        <option value="372">Barge/Boat/Dredge/Towbarge/Towboat/Leach operator, Riverman, Deck hand</option>
-        <option value="82">Front-end loader operator</option>
-        <option value="117">Rodman, Surveyor/Transit helper</option>
-        <option value="334">Drill operator</option>
-        <option value="368">Bulldozer operator, Universal operator, Heavy equipment operator, Operating engineer</option>
-        <option value="128">Scoop tram operator, Load/Haul/Dump operator</option>
-        <option value="384">Driller, Highwall operator, Highwall drill operator</option>
-        <option value="494">Prep plant foreman, Supervisor, Mill plant supervisor, Kiln supervisor</option>
-        <option value="250">Shuttle car operator, Mantrip operator, Ramcar operator, Rail runner, Buggy operator</option>
-        <option value="306">Welder (non-shop)</option>
-        <option value="378">Crane operator, Mobile equipment operator (MEO), Dragline operator, Dropball operator, Rigger</option>
-        <option value="8">Stopping builder, Ventilation man, Mason man, Overcast</option>
-        <option value="1">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
-        <option value="307">Blaster, Shooter, Shotfirer, Explosive worker, Powder gang/monkey</option>
-        <option value="276">Driver, Jeep driver, Tractor operator</option>
-        <option value="404">Master mechanic, Foreman, Supervisor</option>
-        <option value="309">Supply man, Nipper</option>
-        <option value="9">Supply man, Supply worker, Nipper</option>
-        <option value="156">Rock driller</option>
-        <option value="124">Apprentice, Trainee</option>
-        <option value="34">Driller operator</option>
-        <option value="385">Lampman, Lamp person</option>
-        <option value="146">Roof bolter, Rock bolter, Pinner, Mobile roof support operator (MRS)</option>
-        <option value="47">Roof bolter helper, Rock bolter helper, Pinner helper</option>
-        <option value="6">Rock duster</option>
-        <option value="449">Mine manager, Mine foreman, Mine owner</option>
-        <option value="376">Haul/Off road/Coal/Ore/Pit/Quarry/Rock/Rubber tire truck driver, Transportation truck driver</option>
-        <option value="383">Driller, Highwall helper, Highwall drill helper</option>
-        <option value="349">Rotary dump operator, Car dump operator</option>
-        <option value="68">Bulldozer operator, Universal operator, Heavy equipment operator, Operating engineer</option>
-        <option value="76">Truck driver</option>
-        <option value="393">Weighman, Scale person</option>
-        <option value="240">Loader head operator, Roscoe operator</option>
-        <option value="399">Miner, Prospector, NEC</option>
-        <option value="318">Greaser, Grease man, Oiler, Lube man, Dragline oiler</option>
-        <option value="315">Fan attendant</option>
-        <option value="43">Gathering arm loader operator, Loading machine operator, Joy loader operator</option>
-        <option value="111">Wireman, Communications man</option>
-        <option value="370">Auger operator, Auger Crew supervisor</option>
-        <option value="118">Greaser, Grease man, Oiler, Lube man, Dragline oiler</option>
-        <option value="392">Tipple/Top lander/Skip dumper operator, Binman, Topman</option>
-        <option value="497">Clerk, Timekeeper, Office worker, Director of sales</option>
-        <option value="327">Pumper</option>
-        <option value="365">Dispatcher</option>
-        <option value="119">Welder</option>
-        <option value="299">Miner, NEC</option>
-        <option value="352">Steel worker, Iron metal worker, Iron worker</option>
-        <option value="40">Headgate operator</option>
-        <option value="109">Supply man, Supply worker, Nipper</option>
-        <option value="182">Front-end loader operator</option>
-        <option value="375">Grader operator, Roadgrader operator</option>
-        <option value="369">Motorman, Motor person, Swamper, Switchman, Locomotive operator</option>
-        <option value="323">Transit man, Surveyor/Transit worker</option>
-        <option value="24">Apprentice, Trainee</option>
-        <option value="367">Coal/ore shovel operator, Shoveler, Power shoveler</option>
-        <option value="321">Hoistman, Hoist operator</option>
-        <option value="593">Safety representative</option>
-        <option value="78">Backhoe operator, Trackhoe operator, Crane operator</option>
-        <option value="481">Superintendent</option>
-        <option value="32">Brattice man/worker</option>
-        <option value="333">Drill helper</option>
-        <option value="105">Mechanic helper</option>
-        <option value="108">Stopping builder, Ventilation man, Mason man, Overcast</option>
-        <option value="379">Dryer operator, Kiln operator, Dry plant operator, Fluid operator, Bed dryer operator</option>
-        <option value="99">Miner, NEC</option>
-        <option value="262">Brakeman, Roperider, Car runner, Spotterman, Snapper, Trip rider, Car rider, Flagman</option>
-        <option value="380">Fine coal plant operator</option>
-        <option value="311">Wireman, Communications man</option>
-        <option value="394">Carpenter</option>
-        <option value="604">Mucking machine operator</option>
-        <option value="398">Groundman, Yardman</option>
-        <option value="396">Security guard, Watchman</option>
-        <option value="123">Transit man, Surveyor/Transit worker</option>
-        <option value="103">Electrician helper</option>
-        <option value="360">Shopman repair cars, Mechanic</option>
-        <option value="310">Scraper-loader operator</option>
-        <option value="324">Backhoe operator, Trackhoe operator</option>
-        <option value="10">Timberman</option>
-        <option value="305">Mechanic helper</option>
-        <option value="224">Underground transportation trainee</option>
-        <option value="356">Rock driller</option>
-        <option value="464">Inspector</option>
-        <option value="265">Dispatcher</option>
-        <option value="312">Belt vulcanizer</option>
-        <option value="42">Loading machine/Gather arm loader helper</option>
-        <option value="303">Electrician helper</option>
-        <option value="373">Car dropper, Car shake out operator</option>
-        <option value="351">Scoop tram operator, Load/Haul/Dump operator</option>
-        <option value="397">Fireman - locomotive, Railroad clam operator, Timekeeper, Yard engine operator</option>
-        <option value="430">Assistant mine foreman, Assistant mine manager</option>
-        <option value="317">Rodman, Surveyor/Transit helper</option>
-        <option value="112">Belt vulcanizer</option>
-        <option value="388">Scalper-screen operator</option>
-        <option value="402">Master electrician</option>
-        <option value="371">Auger helper</option>
-        <option value="201">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
-        <option value="387">Rotary bucket excavator operator</option>
-        <option value="114">Coal sampler</option>
-        <option value="364">Janitor</option>
-        <option value="33">Drill helper</option>
-        <option value="313">Cleanup man, Cleanup worker</option>
-        <option value="495">Safety director</option>
-        <option value="395">Water truck operator</option>
-        <option value="362">Brakeman, Roperider, Car runner, Spotterman, Snapper, Trip rider, Car rider, Flagman</option>
-        <option value="348">Machinist</option>
-        <option value="11">Wireman, Communications man</option>
-        <option value="7">Blaster, Shooter, Shotfirer, Explosive worker, Powder gang/monkey</option>
-        <option value="423">Draftsman, Surveyor/Transit work supervisor</option>
-        <option value="381">Hoist operator helper</option>
-        <option value="326">Forklift operator</option>
-        <option value="390">Silo operator, Bin puller, Truck loader</option>
-        <option value="345">Crusher attendant/operator, Pan feeder operator/worker</option>
-        <option value="113">Cleanup man, Cleanup worker</option>
-        <option value="51">Stall driver</option>
-        <option value="389">Shaft repair, Skip tender, Station tender</option>
-        <option value="5">Mechanic helper</option>
-        <option value="38">Cutting machine operator, Ripper, Universal operator</option>
-        <option value="48">ROOF BOLTER (MOUNTED) (RETURN SIDE)</option>
-        <option value="363">Ledgeman/hand, Quarry man</option>
-        <option value="221">Hoistman, Hoist operator</option>
-        <option value="320">Cage/Cager/Station attendant, Aerial tram (outside only)</option>
-        <option value="330">Face worker-Shaft/Slope sinking</option>
-        <option value="261">Battery station operator</option>
-        <option value="175">Grader operator</option>
-        <option value="75">Grader operator</option>
-        <option value="39">Hand loader, Hand trammer</option>
-        <option value="340">Boom operator</option>
-        <option value="308">Mason</option>
-        <option value="386">Refuse truck driver, Backfill truck driver, Stock pile truck driver</option>
-        <option value="74">Tractor operator</option>
-        <option value="45">Chute blaster, Rockman, Hang-up man, Raise blaster</option>
-        <option value="594">Training specialist</option>
-        <option value="3">Electrician helper</option>
-        <option value="343">Car trimmer, Car loader, Bin puller, Truck loader</option>
-        <option value="591">Mineral industrial safety officer</option>
-        <option value="353">Trespasser</option>
-        <option value="592">Mine safety instructor</option>
-         </select>
-         </div>
-        </div>
-        <div class="form-row">
-         <div class="form-group col-md-12">
-        <label for="activity_cd">Activity Code</label>
-        <select class="form-control" id="activity_cd">  
-        <option value="" disabled selected>Select Activity</option>
-        <option value="28">Handling supplies or material</option>
-        <option value="82">Set or remove brattice</option>
-        <option value="39">Machine maintenance</option>
-        <option value="40">Move power cable</option>
-        <option value="78">Roof bolter, Inserting bolt</option>
-        <option value="91">Ventilation maintenance</option>
-        <option value="77">Roof bolter, Drilling</option>
-        <option value="25">Hand load, Hand shoveling</option>
-        <option value="89">Timbering, Build cribs</option>
-        <option value="41">Move non-self-propelled equip</option>
-        <option value="92">Walking, Running</option>
-        <option value="23">Getting on or off equipment</option>
-        <option value="93">Welding or cutting</option>
-        <option value="42">Observe operations</option>
-        <option value="96">Working with chemicals</option>
-        <option value="26">Handling coal, Rock, Ore</option>
-        <option value="80">Roof bolter, NEC</option>
-        <option value="79">Roof bolter, Tramming</option>
-        <option value="20">Electrical maintenance</option>
-        <option value="37">Enter/work in bins, Silos</option>
-        <option value="75">Rerail equipment, Sprag</option>
-        <option value="58">Load-haul-dump (UG)</option>
-        <option value="83">Set, Remove, Relocate props</option>
-        <option value="32">Hang or reposition tubing</option>
-        <option value="21">Environmental tests or checks</option>
-        <option value="29">Handling timber</option>
-        <option value="72">Surface equipment, NEC</option>
-        <option value="8">Cement work, Gunite crew</option>
-        <option value="99">Unknown</option>
-        <option value="85">Spot rail cars, Trip riding</option>
-        <option value="86">Block or chock mine cars</option>
-        <option value="38">Lay or repair railroad track</option>
-        <option value="36">Inspect equipment or mine</option>
-        <option value="49">Continuous miner</option>
-        <option value="34">Idle</option>
-        <option value="43">Office and lab work, Clerical</option>
-        <option value="31">Hand tools (powered)</option>
-        <option value="22">Escaping a hazard</option>
-        <option value="61">Longwall, Shear, Plow</option>
-        <option value="3">Blasting, Shoot coal</option>
-        <option value="15">Couple or uncouple mine car</option>
-        <option value="9">Change house, Bathing</option>
-        <option value="16">Crawling, Kneeling</option>
-        <option value="30">Hand tools (not powered)</option>
-        <option value="87">Supervise</option>
-        <option value="17">Cross over (conveyor)</option>
-        <option value="88">Surface construction, NEC</option>
-        <option value="94">Wet down working place</option>
-        <option value="13">Climb scaffolds, Ladders</option>
-        <option value="66">Rock dust machine</option>
-        <option value="33">Horseplay</option>
-        <option value="62">Mantrip</option>
-        <option value="27">Handling explosives</option>
-        <option value="90">Travel</option>
-        <option value="1">Accident recovery</option>
-        <option value="50">Conveyor belt</option>
-        <option value="?">NO VALUE FOUND</option>
-        <option value="73">Underground equipment, NEC</option>
-        <option value="2">Advance roof support-longwall</option>
-        <option value="24">Grinding</option>
-        <option value="74">Remove/position hydraulic jack</option>
-        <option value="47">Bulldozer</option>
-        <option value="65">Power shovel, Dragline</option>
-        <option value="81">Sand fill</option>
-        <option value="60">Locomotive</option>
-        <option value="52">Forklift</option>
-        <option value="53">Front-end loader</option>
-        <option value="98">Other, NEC</option>
-        <option value="55">Haulage or Dump truck</option>
-        <option value="69">Shuttle car, Ram car, Buggy</option>
-        <option value="11">Clean up - UG only</option>
-        <option value="6">Bar down, Includes scaling</option>
-        <option value="19">Drill face, Rib, Side, Down</option>
-        <option value="95">Working with solvents</option>
-        <option value="68">Shortwall</option>
-        <option value="10">Chute, Pull or free</option>
-        <option value="18">Double jack</option>
-        <option value="56">Hoist</option>
-        <option value="4">Blow gun, Airlance</option>
-        <option value="67">Scraper, Pan scraper</option>
-        <option value="71">Utility truck, Water trucks</option>
-        <option value="64">Mucking machine</option>
-        <option value="54">Grader</option>
-        <option value="44">Auger (surface)</option>
-        <option value="51">Cutting machine</option>
-        <option value="45">Auger (UG)</option>
-        <option value="63">Mill equipment</option>
-        <option value="97">Working with noxious materials</option>
-        <option value="59">Loading machine</option>
-        <option value="76">Ride equipment</option>
-        <option value="46">Barge, Boat, Dredge</option>
-        <option value="48">Crusher, Breaker</option>
-        <option value="12">Climb in raise, Shaft, Manway</option>
-        <option value="14">Climb in piled material</option>
-        <option value="7">Caging, Operate elevator</option>
-    </select>
-    </div>
-        </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="injury_source_cd">Injury Source Code</label>
-                    <select class="form-control" id="injury_source_cd">  
-                        <option value="?">NO VALUE FOUND</option>
-                        <option value="24">CHEMICALS, CHEM COMP, NEC</option>
-                        <option value="21">ACIDS, ALKALI, WET CEMENT</option>
-                        <option value="88">METAL, NEC (PIPE, WIRE, NAIL)</option>
-                        <option value="35">BELT CONVEYORS</option>
-                        <option value="89">BROKEN ROCK, COAL, ORE, WSTE</option>
-                        <option value="6">BOXES, CRATES, CARTONS</option>
-                        <option value="86">METAL COVERS & GUARDS</option>
-                        <option value="83">ROOF (ROCK) BOLTS</option>
-                        <option value="124">UNDERGROUND, NEC</option>
-                        <option value="113">BLOCKING</option>
-                        <option value="125">CEMENT PROD, CONCRET BLOCK</option>
-                        <option value="109">NONPOWRD VECH-DOLI, WHLBRW</option>
-                        <option value="7">RBR, GLS, PLSTC, FIBRGLS, FAB</option>
-                        <option value="79">CHAIN, ROPE, CABLE-NT CONVY</option>
-                        <option value="63">ELEVATORS, CAGES, SKIPS, ETC</option>
-                        <option value="90">CAVING ROCK, COAL, ORE, WSTE</option>
-                        <option value="42">CONDCTR, ELCT, CBL, TROL POL</option>
-                        <option value="123">MINE FLOOR, BOTTOM, FOOTWAL</option>
-                        <option value="9">BRATTICE CURT, PLAS & CANV</option>
-                        <option value="112">POST, CAPS, HEADERS, TIMBER</option>
-                        <option value="68">JACKS-MECH, HYDRL, AIR, ETC</option>
-                        <option value="84">STEEL RAIL (ALL KINDS)</option>
-                        <option value="108">MINE JEEP, KERSEY, JITNEY</option>
-                        <option value="4">BAGS</option>
-                        <option value="72">LADDERS, NEC</option>
-                        <option value="92">PULVERIZED MINERAL (DUST)</option>
-                        <option value="77">UNDERGRD MINING MACHINES</option>
-                        <option value="78">BELTS (NOT CONVEYOR)</option>
-                        <option value="82">DRILL STEEL (ALL SIZES)</option>
-                        <option value="121">BACK, MINE ROOF, HNGNG WALL</option>
-                        <option value="127">MISCELLANEOUS, NEC</option>
-                        <option value="26">APPAREL, NEC</option>
-                        <option value="111">CRIBBING</option>
-                        <option value="51">HAND TOOLS, NONPOWERED, NEC</option>
-                        <option value="67">LONGWALL SUPT, JKS & CHOCK</option>
-                        <option value="43">ELECTRICAL APPARATUS, NEC</option>
-                        <option value="115">RAILROAD TIES</option>
-                        <option value="80">DRUM, PULY, SHEAVE-NT CONVY</option>
-                        <option value="12">DOORS, INCL UG VENTILATION</option>
-                        <option value="8">CONTAINERS, NEC</option>
-                        <option value="3">BOILR, PRES VSL, AIR HOS, OX</option>
-                        <option value="98">PUMPS, FANS, COMP, ENG, NEC</option>
-                        <option value="117">GROUND</option>
-                        <option value="76">SURFACE MINING MACHINES</option>
-                        <option value="34">CHUTE & SLIDE-CONVYR HOPR</option>
-                        <option value="71">MOVEABLE LADDERS</option>
-                        <option value="49">KNIFE</option>
-                        <option value="74">MACHINE, NEC-WELDR, OFC MAC</option>
-                        <option value="39">MOTORS</option>
-                        <option value="87">WHEEL-FROM CAR OR TRUCK</option>
-                        <option value="13">STORAGE TANKS AND BINS</option>
-                        <option value="94">LOOSE DIRT AND MUD</option>
-                        <option value="81">MCH PWR TRNSMSN APPR, NEC</option>
-                        <option value="116">WOOD ITEMS, NEC</option>
-                        <option value="95">MINERAL ITEMS, NEC</option>
-                        <option value="104">HGHWY ORE CARIER, LRGE TRK</option>
-                        <option value="55">DRIL-PRCUSV, HRD ROC, JKHMR</option>
-                        <option value="57">HAND TOOLS, POWERED, NEC</option>
-                        <option value="61">OTHER HEATING EQUIP, NEC</option>
-                        <option value="38">CONVEYORS, NEC</option>
-                        <option value="19">BLDG, STRUCT, BOAT, RAFT, NEC</option>
-                        <option value="46">AXE, HAMMER, SLEDGE</option>
-                        <option value="97">PLANTS, TREES, VEGETATION</option>
-                        <option value="5">BARRELS, KEGS, DRUMS</option>
-                        <option value="16">SCAFFOLDS, STAGING, ETC</option>
-                        <option value="103">PASS CARS, PICKUP TRUCKS</option>
-                        <option value="62">CRANES, DERRICKS</option>
-                        <option value="33">COAL & PETROL PRODUCT, NEC</option>
-                        <option value="106">NARO G RAIL CR, MTR-UG EQP</option>
-                        <option value="60">SPACE HEATERS</option>
-                        <option value="2">BODILY MOTION</option>
-                        <option value="107">STD G RAIL CR, MTR-SURF EQ</option>
-                        <option value="114">PALLETS</option>
-                        <option value="118">STAIRS, STEPS-OUTSIDE</option>
-                        <option value="40">GENERATORS</option>
-                        <option value="126">WATER</option>
-                        <option value="48">CROWBAR, PRY BAR</option>
-                        <option value="44">EXPLOSIVE-DIR REL TO INJR</option>
-                        <option value="122">SIDE OR RIB</option>
-                        <option value="36">LONGWALL CONVEYOR</option>
-                        <option value="65">CHAIN HOIST, CHAIN BLOCK</option>
-                        <option value="105">FORKLIFTS, STACKERS, TRCTR</option>
-                        <option value="50">WRENCH</option>
-                        <option value="69">HOISTING APPARATUS, NEC</option>
-                        <option value="120">WORKING SURF OUTSIDE, NEC</option>
-                        <option value="73">LIQUIDS, NEC</option>
-                        <option value="10">FLOOR, WALKING SURF-NOT UG</option>
-                        <option value="93">SAND, GRAVEL, SHELL</option>
-                        <option value="20">BRICK, CERAMIC</option>
-                        <option value="37">SHAKING, VIBRATING CONVEYOR</option>
-                        <option value="?">NO VALUE FOUND</option>
-                        <option value="27">ICE</option>
-                        <option value="25">MINE RESCUE EQUIPMENT</option>
-                        <option value="41">TRANSFORMERS, CONVERTERS</option>
-                        <option value="101">SOAPS, DETER, CLN COMP, NEC</option>
-                        <option value="11">STEPS</option>
-                        <option value="75">MACHINE-MILL, CLEANING PLT</option>
-                        <option value="110">VEHICLES, NEC</option>
-                        <option value="70">FIXED LADDERS</option>
-                        <option value="54">DRILL, ROTARY (COAL DRILL)</option>
-                        <option value="102">STEAM</option>
-                        <option value="1">ANIMALS, INSCTS, BRDS, REPTL</option>
-                        <option value="23">NOXIOUS MINE GASES, NEC</option>
-                        <option value="96">NOISE, NEC</option>
-                        <option value="85">MOLTEN METAL</option>
-                        <option value="31">KILN PROD, INC BLDUP, REMOV</option>
-                        <option value="53">POWER SAW</option>
-                        <option value="15">MINE HEADFRAME</option>
-                        <option value="52">ABRAS STONE, WHEEL GRINDER</option>
-                        <option value="58">HEAT (ATMOS + ENVIRON)</option>
-                        <option value="66">ELECTRIC HOIST</option>
-                        <option value="30">COAL (PROCESSED)</option>
-                        <option value="28">SNOW</option>
-                        <option value="47">CHISEL</option>
-                        <option value="45">FLAME, FIRE, SMOKE, NEC</option>
-                        <option value="56">IMPACTOR, TAMPER</option>
-                        <option value="64">AIR HOIST</option>
-                        <option value="17">TOWERS, POLES, ETC</option>
-                        <option value="119">STREET, ROAD</option>
-                        <option value="14">DAMS, LOCKS, PONDS, BRIDGES</option>
-                        <option value="18">WHARFS, DOCKS, ETC</option>
-                        <option value="22">OXYGEN DEFICIENT ATMOSPHR</option>
-                      </select>
+                    <label for="occupation_cd">Occupation of the Accident's Victim</label>
+                    <select class="form-control" id="occupation_cd">
+                    <option value="" disabled selected>Select Occupation of the Accident's Victim</option>
+                    <option value="?">NO VALUE FOUND</option>
+                    <option value="304">Maintenance man, Mechanic, Repair/Serviceman, Boilermaker, Fueler, Tire tech, Field service tech</option>
+                    <option value="46">Roof bolter, Rock bolter, Pinner, Mobile roof support operator (MRS)</option>
+                    <option value="418">Belt foreman, Maintenance foreman, Maintenance supervisor</option>
+                    <option value="414">Quality control technician, Laboratory technician, Laboratory assistant</option>
+                    <option value="116">Laborer, Bull gang, Parts runner, Roustabout, Roof trimmer/scaler</option>
+                    <option value="44">Longwall operator, Chock operator, Shear operator, Plow operator</option>
+                    <option value="4">Maintenance man, Mechanic, Repair/Serviceman, Boilermaker, Fueler, Tire tech, Field service tech</option>
+                    <option value="149">Bull gang foreman, Labor foreman, Leadman, Section foreman, Shift boss</option>
+                    <option value="35">Continuous miner helper, Coal mole helper, Bridgeman</option>
+                    <option value="104">Maintenance man, Mechanic, Repair/Serviceman, Boilermaker, Fueler, Tire tech, Field service tech</option>
+                    <option value="382">Front-end loader, Scraper-loader operator, Pan operator, Payloader, Scraper rig operator</option>
+                    <option value="122">Coal dump operator</option>
+                    <option value="53">Utility man, Errand boy, Service truck operator</option>
+                    <option value="157">Pumper</option>
+                    <option value="50">Shuttle car operator, Mantrip operator, Ramcar operator, Rail runner, Buggy operator</option>
+                    <option value="462">Examiner, Fire boss, Pre-shift examiner, Mine examiner</option>
+                    <option value="302">Electrician, Lineman</option>
+                    <option value="101">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
+                    <option value="301">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
+                    <option value="374">Warehouseman, Bagger, Palletizer/Stacker, Store keeper, Packager, Fabricator, Cleaning plant operator</option>
+                    <option value="16">Laborer, Bull gang, Faceman, Parts runner, Roustabout, Roof trimmer/scaler</option>
+                    <option value="199">Miner, NEC</option>
+                    <option value="49">Section foreman, Bullgang foreman, Labor foreman, Leadman, Shift boss</option>
+                    <option value="2">Electrician, Lineman</option>
+                    <option value="176">Truck driver</option>
+                    <option value="54">Discontinued 1/31/2014. Several other codes cover Scoop Car Operator</option>
+                    <option value="168">Bulldozer operator, Universal operator, Heavy equipment operator, Operating engineer</option>
+                    <option value="456">Assayer, Geologist, Metallurgist, Engineer, Engineer management</option>
+                    <option value="328">Utility man, Shift tech, Service/Dump truck operator</option>
+                    <option value="154">Belt cleaner, Picker</option>
+                    <option value="36">Continuous miner operator, Coal mole operator</option>
+                    <option value="489">Outside foreman, Leadman</option>
+                    <option value="316">Laborer, Blacksmith, Bull gang, Parts runner, Roustabout, Pick-up man, Pitman</option>
+                    <option value="28">Scoop car/Scooptram operator, Load/Haul/Dump (LHD) operator, Teletram operator</option>
+                    <option value="102">Electrician, Lineman</option>
+                    <option value="216">Trackman, Track worker, Track gang</option>
+                    <option value="319">Welder (shop)</option>
+                    <option value="269">Motorman, Motor person, Swamper, Switchman, Locomotive operator</option>
+                    <option value="41">LW Propman, Propman helper, Move crew if LW, Move-up man, Jacksetter, Advanceman LW helper</option>
+                    <option value="314">Coal sampler</option>
+                    <option value="350">Shuttle car operator, Mantrip operator, Ramcar operator, Rail runner, Buggy operator</option>
+                    <option value="106">Rock duster</option>
+                    <option value="110">Timberman</option>
+                    <option value="372">Barge/Boat/Dredge/Towbarge/Towboat/Leach operator, Riverman, Deck hand</option>
+                    <option value="82">Front-end loader operator</option>
+                    <option value="117">Rodman, Surveyor/Transit helper</option>
+                    <option value="334">Drill operator</option>
+                    <option value="368">Bulldozer operator, Universal operator, Heavy equipment operator, Operating engineer</option>
+                    <option value="128">Scoop tram operator, Load/Haul/Dump operator</option>
+                    <option value="384">Driller, Highwall operator, Highwall drill operator</option>
+                    <option value="494">Prep plant foreman, Supervisor, Mill plant supervisor, Kiln supervisor</option>
+                    <option value="250">Shuttle car operator, Mantrip operator, Ramcar operator, Rail runner, Buggy operator</option>
+                    <option value="306">Welder (non-shop)</option>
+                    <option value="378">Crane operator, Mobile equipment operator (MEO), Dragline operator, Dropball operator, Rigger</option>
+                    <option value="8">Stopping builder, Ventilation man, Mason man, Overcast</option>
+                    <option value="1">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
+                    <option value="307">Blaster, Shooter, Shotfirer, Explosive worker, Powder gang/monkey</option>
+                    <option value="276">Driver, Jeep driver, Tractor operator</option>
+                    <option value="404">Master mechanic, Foreman, Supervisor</option>
+                    <option value="309">Supply man, Nipper</option>
+                    <option value="9">Supply man, Supply worker, Nipper</option>
+                    <option value="156">Rock driller</option>
+                    <option value="124">Apprentice, Trainee</option>
+                    <option value="34">Driller operator</option>
+                    <option value="385">Lampman, Lamp person</option>
+                    <option value="146">Roof bolter, Rock bolter, Pinner, Mobile roof support operator (MRS)</option>
+                    <option value="47">Roof bolter helper, Rock bolter helper, Pinner helper</option>
+                    <option value="6">Rock duster</option>
+                    <option value="449">Mine manager, Mine foreman, Mine owner</option>
+                    <option value="376">Haul/Off road/Coal/Ore/Pit/Quarry/Rock/Rubber tire truck driver, Transportation truck driver</option>
+                    <option value="383">Driller, Highwall helper, Highwall drill helper</option>
+                    <option value="349">Rotary dump operator, Car dump operator</option>
+                    <option value="68">Bulldozer operator, Universal operator, Heavy equipment operator, Operating engineer</option>
+                    <option value="76">Truck driver</option>
+                    <option value="393">Weighman, Scale person</option>
+                    <option value="240">Loader head operator, Roscoe operator</option>
+                    <option value="399">Miner, Prospector, NEC</option>
+                    <option value="318">Greaser, Grease man, Oiler, Lube man, Dragline oiler</option>
+                    <option value="315">Fan attendant</option>
+                    <option value="43">Gathering arm loader operator, Loading machine operator, Joy loader operator</option>
+                    <option value="111">Wireman, Communications man</option>
+                    <option value="370">Auger operator, Auger Crew supervisor</option>
+                    <option value="118">Greaser, Grease man, Oiler, Lube man, Dragline oiler</option>
+                    <option value="392">Tipple/Top lander/Skip dumper operator, Binman, Topman</option>
+                    <option value="497">Clerk, Timekeeper, Office worker, Director of sales</option>
+                    <option value="327">Pumper</option>
+                    <option value="365">Dispatcher</option>
+                    <option value="119">Welder</option>
+                    <option value="299">Miner, NEC</option>
+                    <option value="352">Steel worker, Iron metal worker, Iron worker</option>
+                    <option value="40">Headgate operator</option>
+                    <option value="109">Supply man, Supply worker, Nipper</option>
+                    <option value="182">Front-end loader operator</option>
+                    <option value="375">Grader operator, Roadgrader operator</option>
+                    <option value="369">Motorman, Motor person, Swamper, Switchman, Locomotive operator</option>
+                    <option value="323">Transit man, Surveyor/Transit worker</option>
+                    <option value="24">Apprentice, Trainee</option>
+                    <option value="367">Coal/ore shovel operator, Shoveler, Power shoveler</option>
+                    <option value="321">Hoistman, Hoist operator</option>
+                    <option value="593">Safety representative</option>
+                    <option value="78">Backhoe operator, Trackhoe operator, Crane operator</option>
+                    <option value="481">Superintendent</option>
+                    <option value="32">Brattice man/worker</option>
+                    <option value="333">Drill helper</option>
+                    <option value="105">Mechanic helper</option>
+                    <option value="108">Stopping builder, Ventilation man, Mason man, Overcast</option>
+                    <option value="379">Dryer operator, Kiln operator, Dry plant operator, Fluid operator, Bed dryer operator</option>
+                    <option value="99">Miner, NEC</option>
+                    <option value="262">Brakeman, Roperider, Car runner, Spotterman, Snapper, Trip rider, Car rider, Flagman</option>
+                    <option value="380">Fine coal plant operator</option>
+                    <option value="311">Wireman, Communications man</option>
+                    <option value="394">Carpenter</option>
+                    <option value="604">Mucking machine operator</option>
+                    <option value="398">Groundman, Yardman</option>
+                    <option value="396">Security guard, Watchman</option>
+                    <option value="123">Transit man, Surveyor/Transit worker</option>
+                    <option value="103">Electrician helper</option>
+                    <option value="360">Shopman repair cars, Mechanic</option>
+                    <option value="310">Scraper-loader operator</option>
+                    <option value="324">Backhoe operator, Trackhoe operator</option>
+                    <option value="10">Timberman</option>
+                    <option value="305">Mechanic helper</option>
+                    <option value="224">Underground transportation trainee</option>
+                    <option value="356">Rock driller</option>
+                    <option value="464">Inspector</option>
+                    <option value="265">Dispatcher</option>
+                    <option value="312">Belt vulcanizer</option>
+                    <option value="42">Loading machine/Gather arm loader helper</option>
+                    <option value="303">Electrician helper</option>
+                    <option value="373">Car dropper, Car shake out operator</option>
+                    <option value="351">Scoop tram operator, Load/Haul/Dump operator</option>
+                    <option value="397">Fireman - locomotive, Railroad clam operator, Timekeeper, Yard engine operator</option>
+                    <option value="430">Assistant mine foreman, Assistant mine manager</option>
+                    <option value="317">Rodman, Surveyor/Transit helper</option>
+                    <option value="112">Belt vulcanizer</option>
+                    <option value="388">Scalper-screen operator</option>
+                    <option value="402">Master electrician</option>
+                    <option value="371">Auger helper</option>
+                    <option value="201">Beltman, Conveyor man, Conveyor belt worker, Mobile bridge carrierman, Feeder operator, Conveyor rider</option>
+                    <option value="387">Rotary bucket excavator operator</option>
+                    <option value="114">Coal sampler</option>
+                    <option value="364">Janitor</option>
+                    <option value="33">Drill helper</option>
+                    <option value="313">Cleanup man, Cleanup worker</option>
+                    <option value="495">Safety director</option>
+                    <option value="395">Water truck operator</option>
+                    <option value="362">Brakeman, Roperider, Car runner, Spotterman, Snapper, Trip rider, Car rider, Flagman</option>
+                    <option value="348">Machinist</option>
+                    <option value="11">Wireman, Communications man</option>
+                    <option value="7">Blaster, Shooter, Shotfirer, Explosive worker, Powder gang/monkey</option>
+                    <option value="423">Draftsman, Surveyor/Transit work supervisor</option>
+                    <option value="381">Hoist operator helper</option>
+                    <option value="326">Forklift operator</option>
+                    <option value="390">Silo operator, Bin puller, Truck loader</option>
+                    <option value="345">Crusher attendant/operator, Pan feeder operator/worker</option>
+                    <option value="113">Cleanup man, Cleanup worker</option>
+                    <option value="51">Stall driver</option>
+                    <option value="389">Shaft repair, Skip tender, Station tender</option>
+                    <option value="5">Mechanic helper</option>
+                    <option value="38">Cutting machine operator, Ripper, Universal operator</option>
+                    <option value="48">ROOF BOLTER (MOUNTED) (RETURN SIDE)</option>
+                    <option value="363">Ledgeman/hand, Quarry man</option>
+                    <option value="221">Hoistman, Hoist operator</option>
+                    <option value="320">Cage/Cager/Station attendant, Aerial tram (outside only)</option>
+                    <option value="330">Face worker-Shaft/Slope sinking</option>
+                    <option value="261">Battery station operator</option>
+                    <option value="175">Grader operator</option>
+                    <option value="75">Grader operator</option>
+                    <option value="39">Hand loader, Hand trammer</option>
+                    <option value="340">Boom operator</option>
+                    <option value="308">Mason</option>
+                    <option value="386">Refuse truck driver, Backfill truck driver, Stock pile truck driver</option>
+                    <option value="74">Tractor operator</option>
+                    <option value="45">Chute blaster, Rockman, Hang-up man, Raise blaster</option>
+                    <option value="594">Training specialist</option>
+                    <option value="3">Electrician helper</option>
+                    <option value="343">Car trimmer, Car loader, Bin puller, Truck loader</option>
+                    <option value="591">Mineral industrial safety officer</option>
+                    <option value="353">Trespasser</option>
+                    <option value="592">Mine safety instructor</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="activity_cd">Activity the Victim was performing at the time of the incident</label>
+                    <select class="form-control" id="activity_cd">  
+                    <option value="" disabled selected>Select Activity</option>
+                    <option value="28">Handling supplies or material</option>
+                    <option value="82">Set or remove brattice</option>
+                    <option value="39">Machine maintenance</option>
+                    <option value="40">Move power cable</option>
+                    <option value="78">Roof bolter, Inserting bolt</option>
+                    <option value="91">Ventilation maintenance</option>
+                    <option value="77">Roof bolter, Drilling</option>
+                    <option value="25">Hand load, Hand shoveling</option>
+                    <option value="89">Timbering, Build cribs</option>
+                    <option value="41">Move non-self-propelled equip</option>
+                    <option value="92">Walking, Running</option>
+                    <option value="23">Getting on or off equipment</option>
+                    <option value="93">Welding or cutting</option>
+                    <option value="42">Observe operations</option>
+                    <option value="96">Working with chemicals</option>
+                    <option value="26">Handling coal, Rock, Ore</option>
+                    <option value="80">Roof bolter, NEC</option>
+                    <option value="79">Roof bolter, Tramming</option>
+                    <option value="20">Electrical maintenance</option>
+                    <option value="37">Enter/work in bins, Silos</option>
+                    <option value="75">Rerail equipment, Sprag</option>
+                    <option value="58">Load-haul-dump (UG)</option>
+                    <option value="83">Set, Remove, Relocate props</option>
+                    <option value="32">Hang or reposition tubing</option>
+                    <option value="21">Environmental tests or checks</option>
+                    <option value="29">Handling timber</option>
+                    <option value="72">Surface equipment, NEC</option>
+                    <option value="8">Cement work, Gunite crew</option>
+                    <option value="99">Unknown</option>
+                    <option value="85">Spot rail cars, Trip riding</option>
+                    <option value="86">Block or chock mine cars</option>
+                    <option value="38">Lay or repair railroad track</option>
+                    <option value="36">Inspect equipment or mine</option>
+                    <option value="49">Continuous miner</option>
+                    <option value="34">Idle</option>
+                    <option value="43">Office and lab work, Clerical</option>
+                    <option value="31">Hand tools (powered)</option>
+                    <option value="22">Escaping a hazard</option>
+                    <option value="61">Longwall, Shear, Plow</option>
+                    <option value="3">Blasting, Shoot coal</option>
+                    <option value="15">Couple or uncouple mine car</option>
+                    <option value="9">Change house, Bathing</option>
+                    <option value="16">Crawling, Kneeling</option>
+                    <option value="30">Hand tools (not powered)</option>
+                    <option value="87">Supervise</option>
+                    <option value="17">Cross over (conveyor)</option>
+                    <option value="88">Surface construction, NEC</option>
+                    <option value="94">Wet down working place</option>
+                    <option value="13">Climb scaffolds, Ladders</option>
+                    <option value="66">Rock dust machine</option>
+                    <option value="33">Horseplay</option>
+                    <option value="62">Mantrip</option>
+                    <option value="27">Handling explosives</option>
+                    <option value="90">Travel</option>
+                    <option value="1">Accident recovery</option>
+                    <option value="50">Conveyor belt</option>
+                    <option value="?">NO VALUE FOUND</option>
+                    <option value="73">Underground equipment, NEC</option>
+                    <option value="2">Advance roof support-longwall</option>
+                    <option value="24">Grinding</option>
+                    <option value="74">Remove/position hydraulic jack</option>
+                    <option value="47">Bulldozer</option>
+                    <option value="65">Power shovel, Dragline</option>
+                    <option value="81">Sand fill</option>
+                    <option value="60">Locomotive</option>
+                    <option value="52">Forklift</option>
+                    <option value="53">Front-end loader</option>
+                    <option value="98">Other, NEC</option>
+                    <option value="55">Haulage or Dump truck</option>
+                    <option value="69">Shuttle car, Ram car, Buggy</option>
+                    <option value="11">Clean up - UG only</option>
+                    <option value="6">Bar down, Includes scaling</option>
+                    <option value="19">Drill face, Rib, Side, Down</option>
+                    <option value="95">Working with solvents</option>
+                    <option value="68">Shortwall</option>
+                    <option value="10">Chute, Pull or free</option>
+                    <option value="18">Double jack</option>
+                    <option value="56">Hoist</option>
+                    <option value="4">Blow gun, Airlance</option>
+                    <option value="67">Scraper, Pan scraper</option>
+                    <option value="71">Utility truck, Water trucks</option>
+                    <option value="64">Mucking machine</option>
+                    <option value="54">Grader</option>
+                    <option value="44">Auger (surface)</option>
+                    <option value="51">Cutting machine</option>
+                    <option value="45">Auger (UG)</option>
+                    <option value="63">Mill equipment</option>
+                    <option value="97">Working with noxious materials</option>
+                    <option value="59">Loading machine</option>
+                    <option value="76">Ride equipment</option>
+                    <option value="46">Barge, Boat, Dredge</option>
+                    <option value="48">Crusher, Breaker</option>
+                    <option value="12">Climb in raise, Shaft, Manway</option>
+                    <option value="14">Climb in piled material</option>
+                    <option value="7">Caging, Operate elevator</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="injury_source_cd">Injury Source</label>
+                    <select class="form-control" id="injury_source_cd" onchange="updateInputInjurySource()">
+                        <option value="" selected disabled>Select Injury Source</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="nature_injury_cd">Nature of Injury Code</label>
-                    <select class="form-control" id="nature_injury_cd">  
-                                    <option value="?">NO VALUE FOUND</option>
-            <option value="130">BURN, CHEMICL-FUME, COMPOUN</option>
-            <option value="400">UNCLASSIFIED, NOT DETERMED</option>
-            <option value="180">CUT, LACER, PUNCT-OPN WOUND</option>
-            <option value="330">SPRAIN, STRAIN RUPT DISC</option>
-            <option value="220">FRACTURE, CHIP</option>
-            <option value="370">MULTIPLE INJURIES</option>
-            <option value="260">HERNIA; RUPTURE</option>
-            <option value="160">CONTUSN, BRUISE, INTAC SKIN</option>
-            <option value="320">DUST IN EYES</option>
-            <option value="170">CRUSHING</option>
-            <option value="100">AMPUTATION OR ENUCLEATION</option>
-            <option value="200">DISLOCATION</option>
-            <option value="310">SCRATCH, ABRASION, SUPERFCL</option>
-            <option value="190">DERMATITIS, RASH, SKIN INFL</option>
-            <option value="390">OTHER INJURY, NEC</option>
-            <option value="120">BURN OR SCALD (HEAT)</option>
-            <option value="270">JOINT, TENDON, MUSCL INFLAM</option>
-            <option value="140">CONCUSSION-BRAIN, CEREBRAL</option>
-            <option value="280">POISONING, SYSTEMIC</option>
-            <option value="250">HEATSTROK, SUNSTR, HT EXHAU</option>
-            <option value="301">ELECT.ARC BURN-NOT CONTAC</option>
-            <option value="300">OTH RADIATION EFFECT, NEC</option>
-            <option value="380">OCCUPATIONAL DISEASES, NEC</option>
-            <option value="210">ELECT SHOCK, ELECTROCUTION</option>
-            <option value="110">SUFFOC, SMOK INHILAT, DROWN</option>
-            <option value="350">CEREBRAL HEMORAGE-NT CCUS</option>
-            <option value="360">ELECTRIC BURN-CNTACT BURN</option>
-            <option value="240">HEARING LOSS OR IMPAIRMNT</option>
-            <option value="340">HEART ATTACK</option>
-            </select>
-            </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="inj_body_part_cd">Injured Body Part Code</label>
-                    <select class="form-control" id="inj_body_part_cd">  
-                    <option value="?">NO VALUE FOUND</option>
-                    <option value="130">EYE(S) OPTIC NERVE/VISON</option>
-                    <option value="340">FINGER(S)/THUMB</option>
-                    <option value="330">HAND (NOT WRIST OR FINGERS)</option>
-                    <option value="440">HIPS (PELVIS/ORGANS/KIDNEYS/BUTTOCKS)</option>
-                    <option value="420">BACK (MUSCLES/SPINE/S-CORD/TAILBONE)</option>
-                    <option value="143">NOSE/NASAL PASSAGES/SINUS/SMELL</option>
-                    <option value="100">HEAD, NEC</option>
-                    <option value="512">KNEE/PATELLA</option>
-                    <option value="120">EAR(S) INTERNAL & EXTERNAL</option>
-                    <option value="460">TRUNK, MULTIPLE PARTS</option>
-                    <option value="430">CHEST (RIBS/BREAST BONE/CHEST ORGNS)</option>
-                    <option value="311">UPPER ARM/HUMERUS</option>
-                    <option value="540">TOE(S)/PHALANGES</option>
-                    <option value="450">SHOULDERS (COLLARBONE/CLAVICLE/SCAPULA)</option>
-                    <option value="700">MULTIPLE PARTS (MORE THAN ONE MAJOR)</option>
-                    <option value="530">FOOT(NOT ANKLE/TOE)/TARSUS/METATARSUS</option>
-                    <option value="550">LOWER EXTREMITIES, MULTIPLE PARTS</option>
-                    <option value="144">FACE, MULTIPLE PARTS</option>
-                    <option value="121">EAR(S) EXTERNAL</option>
-                    <option value="350">UPPER EXTREMITIES, MULTIPLE</option>
-                    <option value="313">FOREARM/ULNAR/RADIUS</option>
-                    <option value="410">ABDOMEN/INTERNAL ORGANS</option>
-                    <option value="513">LOWER LEG/TIBIA/FIBULA</option>
-                    <option value="314">ARM, MULTIPLE PARTS</option>
-                    <option value="320">WRIST</option>
-                    <option value="312">ELBOW</option>
-                    <option value="140">FACE, NEC</option>
-                    <option value="200">NECK</option>
-                    <option value="150">SCALP</option>
-                    <option value="511">THIGH/FEMUR</option>
-                    <option value="142">MOUTH/LIP/TEETH/TONGUE/THROAT/TASTE</option>
-                    <option value="510">LEG, NEC</option>
-                    <option value="520">ANKLE</option>
-                    <option value="141">JAW INCLUDE CHIN</option>
-                    <option value="122">EAR(S) INTERNAL & HEARING</option>
-                    <option value="310">ARM, NEC</option>
-                    <option value="170">HEAD, MULTIPLE PARTS</option>
-                    <option value="300">UPPER EXTREMITIES, NEC</option>
-                    <option value="110">BRAIN</option>
-                    <option value="514">LEG, MULTIPLE PARTS</option>
-                    <option value="400">TRUNK, NEC</option>
-                    <option value="500">LOWER EXTREMITIES, NEC</option>
-                    <option value="600">BODY SYSTEMS</option>
-                    <option value="160">SKULL</option>
-                    <option value="800">BODY PARTS, NEC</option>
-                    <option value="900">UNCLASSIFIED</option>
-                  </select>                  
+                    <select class="form-control" id="nature_injury_cd" onchange="updateInputInjuryNature()">
+                        <option value="" selected disabled>Select Injury Nature</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
+                    <label for="inj_body_part_cd">Injured Body Part</label>
+                    <select class="form-control" id="inj_body_part_cd" onchange="updateInputInjuryBodyPart()">
+                        <option value="" selected disabled>Select Injury Body Part</option>
+                    </select>
+                </div>
+            </div>
+            <script>
+                var injuries_sources = {
+                    "24": "CHEMICALS,CHEM COMP,NEC",
+                    "21": "ACIDS,ALKALI,WET CEMENT",
+                    "88": "METAL,NEC(PIPE,WIRE,NAIL)",
+                    "35": "BELT CONVEYORS",
+                    "89": "BROKEN ROCK,COAL,ORE,WSTE",
+                    "6": "BOXES,CRATES,CARTONS",
+                    "86": "METAL COVERS & GUARDS",
+                    "83": "ROOF (ROCK) BOLTS",
+                    "124": "UNDERGROUND,NEC",
+                    "113": "BLOCKING",
+                    "125": "CEMENT PROD,CONCRET BLOCK",
+                    "109": "NONPOWRD VECH-DOLI,WHLBRW",
+                    "7": "RBR,GLS,PLSTC,FIBRGLS,FAB",
+                    "79": "CHAIN,ROPE,CABLE-NT CONVY",
+                    "63": "ELEVATORS,CAGES,SKIPS,ETC",
+                    "90": "CAVING ROCK,COAL,ORE,WSTE",
+                    "42": "CONDCTR,ELCT,CBL,TROL POL",
+                    "123": "MINE FLOOR,BOTTOM,FOOTWAL",
+                    "9": "BRATTICE CURT,PLAS & CANV",
+                    "112": "POST,CAPS,HEADERS,TIMBER",
+                    "68": "JACKS-MECH,HYDRL,AIR,ETC",
+                    "84": "STEEL RAIL (ALL KINDS)",
+                    "108": "MINE JEEP,KERSEY,JITNEY",
+                    "4": "BAGS",
+                    "72": "LADDERS,NEC",
+                    "92": "PULVERIZED MINERAL (DUST)",
+                    "77": "UNDERGRD MINING MACHINES",
+                    "78": "BELTS (NOT CONVEYOR)",
+                    "82": "DRILL STEEL (ALL SIZES)",
+                    "121": "BACK,MINE ROOF,HNGNG WALL",
+                    "127": "MISCELLANEOUS,NEC",
+                    "26": "APPAREL,NEC",
+                    "111": "CRIBBING",
+                    "51": "HAND TOOLS,NONPOWERED,NEC",
+                    "67": "LONGWALL SUPT,JKS & CHOCK",
+                    "43": "ELECTRICAL APPARATUS,NEC",
+                    "115": "RAILROAD TIES",
+                    "80": "DRUM,PULY,SHEAVE-NT CONVY",
+                    "12": "DOORS,INCL UG VENTILATION",
+                    "8": "CONTAINERS,NEC",
+                    "3": "BOILR,PRES VSL,AIR HOS,OX",
+                    "98": "PUMPS,FANS,COMP,ENG,NEC",
+                    "117": "GROUND",
+                    "76": "SURFACE MINING MACHINES",
+                    "34": "CHUTE & SLIDE-CONVYR HOPR",
+                    "71": "MOVEABLE LADDERS",
+                    "49": "KNIFE",
+                    "74": "MACHINE,NEC-WELDR,OFC MAC",
+                    "39": "MOTORS",
+                    "87": "WHEEL-FROM CAR OR TRUCK",
+                    "13": "STORAGE TANKS AND BINS",
+                    "94": "LOOSE DIRT AND MUD",
+                    "81": "MCH PWR TRNSMSN APPR,NEC",
+                    "116": "WOOD ITEMS,NEC",
+                    "95": "MINERAL ITEMS,NEC",
+                    "104": "HGHWY ORE CARIER,LRGE TRK",
+                    "55": "DRIL-PRCUSV,HRD ROC,JKHMR",
+                    "57": "HAND TOOLS,POWERED,NEC",
+                    "61": "OTHER HEATING EQUIP,NEC",
+                    "38": "CONVEYORS,NEC",
+                    "19": "BLDG,STRUCT,BOAT,RAFT,NEC",
+                    "46": "AXE,HAMMER,SLEDGE",
+                    "97": "PLANTS,TREES,VEGETATION",
+                    "5": "BARRELS,KEGS,DRUMS",
+                    "16": "SCAFFOLDS,STAGING,ETC",
+                    "103": "PASS CARS,PICKUP TRUCKS",
+                    "62": "CRANES,DERRICKS",
+                    "33": "COAL & PETROL PRODUCT,NEC",
+                    "106": "NARO G RAIL CR,MTR-UG EQP",
+                    "60": "SPACE HEATERS",
+                    "2": "BODILY MOTION",
+                    "107": "STD G RAIL CR,MTR-SURF EQ",
+                    "114": "PALLETS",
+                    "118": "STAIRS,STEPS-OUTSIDE",
+                    "40": "GENERATORS",
+                    "126": "WATER",
+                    "48": "CROWBAR,PRY BAR",
+                    "44": "EXPLOSIVE-DIR REL TO INJR",
+                    "122": "SIDE OR RIB",
+                    "36": "LONGWALL CONVEYOR",
+                    "65": "CHAIN HOIST, CHAIN BLOCK",
+                    "105": "FORKLIFTS,STACKERS,TRCTR",
+                    "50": "WRENCH",
+                    "69": "HOISTING APPARATUS,NEC",
+                    "120": "WORKING SURF OUTSIDE,NEC",
+                    "73": "LIQUIDS,NEC",
+                    "10": "FLOOR,WALKING SURF-NOT UG",
+                    "93": "SAND,GRAVEL,SHELL",
+                    "20": "BRICK,CERAMIC",
+                    "37": "SHAKING,VIBRATNG CONVEYOR",
+                    "?": "NO VALUE FOUND",
+                    "27": "ICE",
+                    "25": "MINE RESCUE EQUIPMENT",
+                    "41": "TRANSFORMERS,CONVERTERS",
+                    "101": "SOAPS,DETER,CLN COMP,NEC",
+                    "11": "STEPS",
+                    "75": "MACHINE-MILL,CLEANING PLT",
+                    "110": "VEHICLES,NEC",
+                    "70": "FIXED LADDERS",
+                    "54": "DRILL,ROTARY (COAL DRILL)",
+                    "102": "STEAM",
+                    "1": "ANIMALS,INSCTS,BRDS,REPTL",
+                    "23": "NOXIOUS MINE GASES,NEC",
+                    "96": "NOISE,NEC",
+                    "85": "MOLTEN METAL",
+                    "31": "KILN PROD,INC BLDUP,REMOV",
+                    "53": "POWER SAW",
+                    "15": "MINE HEADFRAME",
+                    "52": "ABRAS STONE,WHEEL GRINDER",
+                    "58": "HEAT (ATMOS + ENVIRON)",
+                    "66": "ELECTRIC HOIST",
+                    "30": "COAL (PROCESSED)",
+                    "28": "SNOW",
+                    "47": "CHISEL",
+                    "45": "FLAME,FIRE,SMOKE,NEC",
+                    "56": "IMPACTOR,TAMPER",
+                    "64": "AIR HOIST",
+                    "17": "TOWERS,POLES,ETC",
+                    "119": "STREET,ROAD",
+                    "14": "DAMS,LOCKS,PONDS,BRIDGES",
+                    "18": "WHARFS,DOCKS,ETC",
+                    "22": "OXYGEN DEFICIENT ATMOSPHR",
+                };
+            
+                var injury_natures = {
+                    "130": "BURN,CHEMICL-FUME,COMPOUN",
+                    "400": "UNCLASSIFIED,NOT DETERMED",
+                    "180": "CUT,LACER,PUNCT-OPN WOUND",
+                    "330": "SPRAIN,STRAIN RUPT DISC",
+                    "220": "FRACTURE,CHIP",
+                    "370": "MULTIPLE INJURIES",
+                    "260": "HERNIA;RUPTURE",
+                    "160": "CONTUSN,BRUISE,INTAC SKIN",
+                    "320": "DUST IN EYES",
+                    "170": "CRUSHING",
+                    "100": "AMPUTATION OR ENUCLEATION",
+                    "200": "DISLOCATION",
+                    "310": "SCRATCH,ABRASION,SUPERFCL",
+                    "190": "DERMATITIS,RASH,SKIN INFL",
+                    "390": "OTHER INJURY,NEC",
+                    "120": "BURN OR SCALD (HEAT)",
+                    "270": "JOINT,TENDON,MUSCL INFLAM",
+                    "140": "CONCUSSION-BRAIN,CEREBRAL",
+                    "?": "NO VALUE FOUND",
+                    "280": "POISONING,SYSTEMIC",
+                    "250": "HEATSTROK,SUNSTR,HT EXHAU",
+                    "301": "ELECT.ARC BURN-NOT CONTAC",
+                    "300": "OTH RADIATION EFFECT,NEC",
+                    "380": "OCCUPATIONAL DISEASES,NEC",
+                    "210": "ELECT SHOCK,ELECTROCUTION",
+                    "110": "SUFFOC,SMOK INHILAT,DROWN",
+                    "350": "CEREBRAL HEMORAGE-NT CCUS",
+                    "360": "ELECTRIC BURN-CNTACT BURN",
+                    "240": "HEARING LOSS OR IMPAIRMNT",
+                    "340": "HEART ATTACK",
+                };
+            
+                var injury_bodyparts = {
+                    "130": "EYE(S) OPTIC NERVE/VISON",
+                    "340": "FINGER(S)/THUMB",
+                    "330": "HAND (NOT WRIST OR FINGERS)",
+                    "440": "HIPS (PELVIS/ORGANS/KIDNEYS/BUTTOCKS)",
+                    "420": "BACK (MUSCLES/SPINE/S-CORD/TAILBONE)",
+                    "143": "NOSE/NASAL PASSAGES/SINUS/SMELL",
+                    "100": "HEAD,NEC",
+                    "512": "KNEE/PATELLA",
+                    "120": "EAR(S) INTERNAL & EXTERNAL",
+                    "460": "TRUNK, MULTIPLE PARTS",
+                    "430": "CHEST (RIBS/BREAST BONE/CHEST ORGNS)",
+                    "311": "UPPER ARM/HUMERUS",
+                    "540": "TOE(S)/PHALANGES",
+                    "450": "SHOULDERS (COLLARBONE/CLAVICLE/SCAPULA)",
+                    "700": "MULTIPLE PARTS (MORE THAN ONE MAJOR)",
+                    "530": "FOOT(NOT ANKLE/TOE)/TARSUS/METATARSUS",
+                    "550": "LOWER EXTREMITIES, MULTIPLE PARTS",
+                    "144": "FACE, MULTIPLE PARTS",
+                    "121": "EAR(S) EXTERNAL",
+                    "350": "UPPER EXTREMITIES, MULTIPLE",
+                    "313": "FOREARM/ULNAR/RADIUS",
+                    "410": "ABDOMEN/INTERNAL ORGANS",
+                    "513": "LOWER LEG/TIBIA/FIBULA",
+                    "314": "ARM, MULTIPLE PARTS",
+                    "320": "WRIST",
+                    "312": "ELBOW",
+                    "140": "FACE,NEC",
+                    "200": "NECK",
+                    "150": "SCALP",
+                    "511": "THIGH/FEMUR",
+                    "142": "MOUTH/LIP/TEETH/TONGUE/THROAT/TASTE",
+                    "510": "LEG, NEC",
+                    "520": "ANKLE",
+                    "141": "JAW INCLUDE CHIN",
+                    "122": "EAR(S) INTERNAL & HEARING",
+                    "310": "ARM,NEC",
+                    "170": "HEAD, MULTIPLE PARTS",
+                    "300": "UPPER EXTREMITIES, NEC",
+                    "110": "BRAIN",
+                    "514": "LEG, MULTIPLE PARTS",
+                    "?": "NO VALUE FOUND",
+                    "400": "TRUNK,NEC",
+                    "500": "LOWER EXTREMITIES,NEC",
+                    "600": "BODY SYSTEMS",
+                    "160": "SKULL",
+                    "800": "BODY PARTS, NEC",
+                    "900": "UNCLASSIFIED",
+                };
+            
+                function populateDropdownInjurySource() {
+                    var dropdown = document.getElementById("injury_source_cd");
+                    for (var code in injuries_sources) {
+                        var option = document.createElement("option");
+                        option.value = code;
+                        option.text = injuries_sources[code];
+                        dropdown.appendChild(option);
+                    }
+                }
+            
+                function populateDropdownInjuryNature() {
+                    var dropdown = document.getElementById("nature_injury_cd");
+                    for (var code in injury_natures) {
+                        var option = document.createElement("option");
+                        option.value = code;
+                        option.text = injury_natures[code];
+                        dropdown.appendChild(option);
+                    }
+                }
+            
+                function populateDropdownInjuryBodyPart() {
+                    var dropdown = document.getElementById("inj_body_part_cd");
+                    for (var code in injury_bodyparts) {
+                        var option = document.createElement("option");
+                        option.value = code;
+                        option.text = injury_bodyparts[code];
+                        dropdown.appendChild(option);
+                    }
+                }
+            
+                function updateInputInjurySource() {
+                    var selectedValue = document.getElementById("injury_source_cd").value;
+                    var selectedinjurysource = injuries_sources[selectedValue];
+                    document.getElementById("selectedinjurysource").value = selectedinjurysource;
+                }
+            
+                function updateInputInjuryNature() {
+                    var selectedValue = document.getElementById("nature_injury_cd").value;
+                    var selectedinjurynature = injury_natures[selectedValue];
+                    document.getElementById("selectedinjurynature").value = selectedinjurynature;
+                }
+            
+                function updateInputInjuryBodyPart() {
+                    var selectedValue = document.getElementById("inj_body_part_cd").value;
+                    var selectedinjurybodypart = injury_bodyparts[selectedValue];
+                    document.getElementById("selectedinjurybodypart").value = selectedinjurybodypart;
+                }
+            
+                window.onload = function() {
+                    populateDropdownInjurySource();
+                    populateDropdownInjuryNature();
+                    populateDropdownInjuryBodyPart();
+                };
+            </script>
+            <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="schedule_charge">Schedule Charge</label>
-                    <input type="number" class="form-control" id="schedule_charge" placeholder="Enter Schedule Charge">
+                    <input type="number" class="form-control" id="schedule_charge" placeholder="Enter Schedule Charge"min=0>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="days_restrict">Days Restricted</label>
-                    <input type="number" class="form-control" id="days_restrict" placeholder="Enter Days Restricted">
+                    <input type="number" class="form-control" id="days_restrict" placeholder="Enter Days Restricted" min=0>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="days_lost">Days Lost</label>
-                    <input type="number" class="form-control" id="days_lost" placeholder="Enter Days Lost">
+                    <input type="number" class="form-control" id="days_lost" placeholder="Enter Days Lost"min=0>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="trans_term">Transfer Term</label>
-                    <input type="text" class="form-control" id="trans_term" placeholder="Enter Transfer Term">
+                    <select class="form-control" id="trans_option">
+                        <option value="" selected disabled>Select Transfer Term</option>
+                        <option value="Y">Y</option>
+                        <option value="N">N</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
@@ -739,35 +1160,16 @@
                     <label for="return_to_work_dt">Return-to-work Date</label>
                     <input type="date" class="form-control" id="return_to_work_dt">
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="immed_notify_cd">Immediate Notification Code</label>
-                    <select class="form-control" id="immed_notify_cd">  
-                    <option value="? ">NO VALUE FOUND</option>
-                    <option value="13">NOT MARKED</option>
-                    <option value="12">OFFSITE INJURY</option>
-                    <option value="2">SERIOUS INJURY</option>
-                    <option value="11">HOISTING</option>
-                    <option value="6">MINE FIRE</option>
-                    <option value="1">DEATH</option>
-                    <option value="8">ROOF FALL</option>
-                    <option value="3">ENTRAPMENT</option>
-                    <option value="5">GAS OF DUST IGNITION</option>
-                    <option value="7">EXPLOSIVES</option>
-                    <option value="9">OUTBURST</option>
-                    <option value="4">INNUMDATION</option>
-                    <option value="10">IMPOUNDING DAM</option>
-                </select>
-                </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="coal_metal_ind">Coal or Metal Indication</label>
-                    <input type="text" class="form-control" id="coal_metal_ind" placeholder="Enter Coal or Metal Indication" value="C" disabled>
+                    <select class="form-control" id="coal_metal_ind">
+                        <option value="" selected disabled>Select Coal or Metal Indication</option>
+                        <option value="0">C</option>
+                        <option value="1">M</option>
+                    </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Predict the classfied accident</button>
         </form>
         <div class="mt-4">
             <p>{{ prediction_text }}</p>
